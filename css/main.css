@@ -5206,7 +5206,7 @@ div#swiper_container {
 }
 .blog-slider {
   position: relative;
-  border-radius: 10px 10px 10px 10px;
+  border-radius: 12px 12px 12px 12px;
   margin: auto;
   padding: 10px;
   transition: all 0.3s;
