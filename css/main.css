@@ -5340,7 +5340,7 @@ div#swiper_container {
 .blog-slider__button {
   display: inline-flex;
   background-color: var(--block);
-  padding: 8px 14px;
+  padding: 8px 8px;
   border-radius: 8px;
   color: var(--text-p1);
   text-decoration: none;
