@@ -5326,7 +5326,7 @@ div#swiper_container {
 .blog-slider__text {
   text-align: left;
   font-size: 0.9375rem;
-  color: var(--text-p1);
+  color: var(--text-p3);
   -webkit-line-clamp: 3;
   display: -webkit-box;
   overflow: hidden;
@@ -5340,7 +5340,7 @@ div#swiper_container {
 .blog-slider__button {
   display: inline-flex;
   background-color: var(--block);
-  padding: 8px 14px;
+  padding: 14px 14px;
   border-radius: 8px;
   color: var(--text-p1);
   text-decoration: none;
