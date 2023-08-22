@@ -5405,17 +5405,15 @@ div#swiper_container {
     height: 11px;
     width: 30px;
   }
-  .blog-slider__button {
-    display: inline-flex;
-    width: 70%;
-  }
-  .blog-slider__text {
-    margin-bottom: 40px;
-  }
   .blog-slider {
     min-height: 350px;
     height: auto;
     margin-bottom: 10px;
+  }
+  .blog-slider__content {
+    margin-top: 20px;
+    text-align: center;
+    padding: 0 30px;
   }
   .blog-slider__item {
     flex-direction: column;
