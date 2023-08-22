@@ -5283,8 +5283,8 @@ div#swiper_container {
   top: 0;
   left: 0;
   width: 100%;
-  height: 100%;
-  border-radius: 5px;
+  height: 80%;
+  border-radius: 15px;
   opacity: 0.8;
 }
 .blog-slider__img img {
@@ -5315,7 +5315,7 @@ div#swiper_container {
 .blog-slider__title {
   text-align: left;
   font-size: 1.375rem;
-  font-weight: 700;
+  font-weight: 500;
   color: var(--text-p1);
   margin-bottom: 10px;
   -webkit-line-clamp: 1;
