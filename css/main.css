@@ -5417,11 +5417,6 @@ div#swiper_container {
     height: auto;
     margin-bottom: 10px;
   }
-  .blog-slider__content {
-    margin-top: 20px;
-    text-align: center;
-    padding: 0 30px;
-  }
   .blog-slider__item {
     flex-direction: column;
   }
