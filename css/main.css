@@ -5415,10 +5415,8 @@ div#swiper_container {
     text-align: center;
     padding: 0 30px;
   }
-  .blog-slider__img,
-  .blog-slider__content {
-    padding-left: 10px;
-    padding-right: 10px;
+  .blog-slider__item {
+    flex-direction: column;
   }
   .blog-slider__pagination.swiper-pagination-clickable.swiper-pagination-bullets {
     top: 230px;
