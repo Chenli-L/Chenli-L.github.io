@@ -5327,7 +5327,7 @@ div#swiper_container {
   text-align: left;
   font-size: 0.9375rem;
   color: var(--text-p3);
-  -webkit-line-clamp: 3;
+  -webkit-line-clamp: 4;
   display: -webkit-box;
   overflow: hidden;
   -webkit-box-orient: vertical;
