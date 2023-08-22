@@ -5410,8 +5410,18 @@ div#swiper_container {
     height: auto;
     margin-bottom: 10px;
   }
+  .blog-slider__content {
+    margin-top: 20px;
+    text-align: center;
+    padding: 0 30px;
+  }
   .blog-slider__item {
     flex-direction: column;
+  }
+  .blog-slider__img,
+  .blog-slider__content {
+    padding-left: 10px;
+    padding-right: 10px;
   }
   .blog-slider__pagination.swiper-pagination-clickable.swiper-pagination-bullets {
     top: 230px;
