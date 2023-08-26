@@ -132,7 +132,7 @@ blockquote {
   padding: 0.25rem 0.75rem;
   background: var(--block);
   border-left: 4px solid var(--text-meta);
-  border-radius: 4px 6px 6px 4px;
+  border-radius: 4px 8px 8px 4px;
   color: var(--text-p2);
 }
 :root {
@@ -367,8 +367,8 @@ pre:not([class]):has(>code) {
 .md-text .highlight figcaption span {
   padding: 4px 0.5rem;
   display: block;
-  border-bottom-left-radius: 6px;
-  border-bottom-right-radius: 6px;
+  border-bottom-left-radius: 8px;
+  border-bottom-right-radius: 8px;
   background: var(--block-hover);
 }
 .md-text .highlight >table {
@@ -394,7 +394,7 @@ pre:not([class]):has(>code) {
 .md-text .highlight >table::-webkit-scrollbar-thumb {
   background: transparent;
   cursor: pointer;
-  border-radius: 6px;
+  border-radius: 8px;
 }
 .md-text .highlight >table:hover::-webkit-scrollbar-thumb {
   background: var(--text-meta);
@@ -1518,7 +1518,7 @@ nav.cap a+a {
 }
 .related-wrap a.more {
   padding: 0.25rem 0.5rem;
-  border-radius: 6px;
+  border-radius: 8px;
   color: var(--text-p1);
 }
 article.md-text.content+.related-wrap {
@@ -2077,7 +2077,7 @@ article.md-text.content+.related-wrap {
   justify-content: space-between;
   box-sizing: border-box;
   background: var(--block);
-  border-radius: 6px;
+  border-radius: 8px;
   border: 1px solid var(--block-border);
   overflow: hidden;
   width: 320px;
@@ -2502,7 +2502,7 @@ details.folding[child=iframe] >div.body {
 }
 .tag-plugin.image .image-bg {
   text-align: center;
-  border-radius: 10px;
+  border-radius: 6px;
   position: relative;
   overflow: hidden;
 }
@@ -2616,7 +2616,7 @@ details.folding[child=iframe] >div.body {
   width: 320px;
   max-width: 100%;
   box-shadow: 0 1px 2px 0px rgba(0,0,0,0.1);
-  border-radius: 6px;
+  border-radius: 8px;
   transition: box-shadow 0.2s ease-out, transform 0.2s ease-out;
   -moz-transition: box-shadow 0.2s ease-out, transform 0.2s ease-out;
   -webkit-transition: box-shadow 0.2s ease-out, transform 0.2s ease-out;
@@ -3500,7 +3500,7 @@ details.folding[child=iframe] >div.body {
 details.toc {
   background: var(--block);
   border: 1px solid var(--block-border);
-  border-radius: 6px;
+  border-radius: 8px;
   overflow: hidden;
   color: var(--text-p2);
 }
@@ -4068,7 +4068,7 @@ nav.menu a.nav-item:hover {
   font-size: 0.875rem;
   padding: 2rem;
   background: var(--block);
-  border-radius: 6px;
+  border-radius: 8px;
 }
 .search-wrapper #search-result ul.search-result-list {
   padding: 0;
@@ -4257,7 +4257,7 @@ nav.menu a.nav-item:hover {
   font-size: 0.875rem;
 }
 .widget-wrapper.toc.multi .doc-tree {
-  border-radius: 6px;
+  border-radius: 8px;
   background: var(--block);
   overflow: hidden;
   border: 1px solid var(--block-border);
@@ -4455,7 +4455,7 @@ nav.menu a.nav-item:hover {
 .post-list #cats a.cat {
   display: flex;
   padding: 0.5em 1rem;
-  border-radius: 6px;
+  border-radius: 8px;
   color: var(--text-p2);
   align-items: center;
   justify-content: space-between;
@@ -5025,7 +5025,7 @@ h1.article-title {
   margin: var(--gap-p) 0;
 }
 .md-text img {
-  border-radius: 10px;
+  border-radius: 6px;
   margin: auto;
   display: block;
 }
