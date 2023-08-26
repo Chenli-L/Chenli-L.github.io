@@ -29,7 +29,7 @@
   }
 }
 :root {
-  --site-bg: #f6f7f9;
+  --site-bg: #f0f2f4;
   --card: #fff;
   --block: #f1f2f3;
   --block-border: #e3e5e8;
@@ -46,7 +46,7 @@
 }
 @media (prefers-color-scheme: dark) {
   :root {
-    --site-bg: #212427;
+    --site-bg: #2a2e32;
     --card: #373d43;
     --block: #26292c;
     --block-border: #383d42;
@@ -2502,7 +2502,7 @@ details.folding[child=iframe] >div.body {
 }
 .tag-plugin.image .image-bg {
   text-align: center;
-  border-radius: 6px;
+  border-radius: 10px;
   position: relative;
   overflow: hidden;
 }
@@ -5025,7 +5025,7 @@ h1.article-title {
   margin: var(--gap-p) 0;
 }
 .md-text img {
-  border-radius: 6px;
+  border-radius: 10px;
   margin: auto;
   display: block;
 }
