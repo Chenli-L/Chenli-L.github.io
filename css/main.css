@@ -41,7 +41,7 @@
   --text-p4: #999;
   --text-meta: #ccc;
   --text-code: #f53900;
-  --theme-bg2: #005999;
+  --theme-bg2: #07c;
   --theme-link: #2094f3;
 }
 @media (prefers-color-scheme: dark) {
@@ -176,7 +176,7 @@ a.button {
   user-select: none;
 }
 a.button.theme {
-  background: #005999;
+  background: #07c;
   color: var(--card);
 }
 a.button.theme:hover {
@@ -262,7 +262,7 @@ a.button.start.gradient:hover:after {
   color: #03c3f5;
 }
 .cap.theme {
-  color: #004a80;
+  color: #0068b3;
 }
 .dis-select {
   -moz-user-select: none;
@@ -1408,7 +1408,7 @@ nav.cap a:after {
   bottom: -8px;
   left: 1rem;
   right: 1rem;
-  background: #005999;
+  background: #07c;
   border-radius: 2px;
   pointer-events: none;
 }
@@ -1972,7 +1972,7 @@ article.md-text.content+.related-wrap {
 }
 @media (prefers-color-scheme: dark) {
   .tag-plugin.tag {
-    --theme: #005999;
+    --theme: #07c;
     --theme-bg1: #142c3d;
     --theme-bg2: #222a2f;
     --theme-border: #1f425c;
@@ -3195,7 +3195,7 @@ details.folding[child=iframe] >div.body {
   content: '';
   z-index: 1;
   position: absolute;
-  background: #005999;
+  background: #07c;
   height: 2px;
   bottom: -8px;
   left: 0.75rem;
@@ -3272,7 +3272,7 @@ details.folding[child=iframe] >div.body {
   max-width: 100%;
 }
 .md-text .tag-plugin.timeline .timenode[highlight] .header:before {
-  background: #005999;
+  background: #07c;
 }
 .md-text .tag-plugin.timeline .timenode+.timenode {
   margin-top: 1rem;
@@ -3281,13 +3281,13 @@ details.folding[child=iframe] >div.body {
   color: var(--text-p1);
 }
 .md-text .tag-plugin.timeline .timenode:hover .header .user-info {
-  background: #005999;
+  background: #07c;
 }
 .md-text .tag-plugin.timeline .timenode:hover .header .user-info span {
   color: var(--card);
 }
 .md-text .tag-plugin.timeline .timenode:hover .header:before {
-  background: #005999;
+  background: #07c;
   height: 16px;
   top: calc(50% - 0.5 * 16px);
   transform: scale(1);
@@ -3881,7 +3881,7 @@ nav.menu a.nav-item:hover {
   font-weight: 500;
   border-radius: 64px;
   padding: 0.5rem 1rem;
-  background: #005999;
+  background: #07c;
   color: var(--card);
   font-size: 1rem;
   align-self: stretch;
@@ -3922,7 +3922,7 @@ nav.menu a.nav-item:hover {
   width: 32px;
   left: calc(50% - 0.5 * 32px);
   border-radius: 4px;
-  background: #005999;
+  background: #07c;
 }
 .widget-wrapper.ghuser .menu a:hover {
   box-shadow: none;
@@ -4219,8 +4219,8 @@ nav.menu a.nav-item:hover {
   list-style: none;
 }
 .widget-wrapper.toc .toc-item.active {
-  color: #005999;
-  border-left-color: #005999;
+  color: #07c;
+  border-left-color: #07c;
 }
 .widget-wrapper.toc .toc-item .toc-child .toc-item {
   padding: 0;
@@ -4240,14 +4240,14 @@ nav.menu a.nav-item:hover {
   bottom: calc(50% - 6px);
   width: 2px;
   border-radius: 2px;
-  background: #005999;
+  background: #07c;
   visibility: hidden;
 }
 .widget-wrapper.toc a.toc-link:hover {
   background: var(--block-hover);
 }
 .widget-wrapper.toc a.toc-link.active {
-  color: #005999 !important;
+  color: #07c !important;
 }
 .widget-wrapper.toc a.toc-link.active:before {
   visibility: visible;
@@ -4447,7 +4447,7 @@ nav.menu a.nav-item:hover {
   color: var(--text-p1);
 }
 .post-list #archive:hover .archive-header:after {
-  background: #005999;
+  background: #07c;
 }
 .post-list #cats {
   padding: 0;
@@ -4477,7 +4477,7 @@ nav.menu a.nav-item:hover {
 }
 .post-list #cats a.cat:hover .badge {
   opacity: 1;
-  color: #005999;
+  color: #07c;
 }
 .post-list #tags {
   display: flex;
@@ -4508,7 +4508,7 @@ nav.menu a.nav-item:hover {
   background: var(--block-hover);
 }
 .post-list #tags a.tag:hover:before {
-  color: #005999;
+  color: #07c;
   opacity: 1;
 }
 .md-text.error-page {
@@ -5098,7 +5098,7 @@ img.lazy.error {
   -o-transition: box-shadow 0.2s ease-out, transform 0.2s ease-out, filter 0.2s ease-out;
 }
 :root {
-  --swiper-theme-color: #005999 !important;
+  --swiper-theme-color: #07c !important;
 }
 .swiper {
   width: 100%;
@@ -5385,7 +5385,7 @@ div#swiper_container {
 }
 .blog-slider__pagination .swiper-pagination-bullet-active {
   opacity: 1;
-  background: #005999;
+  background: #07c;
   height: 30px;
 }
 @media screen and (max-width: 600px) {
