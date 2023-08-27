@@ -695,7 +695,7 @@ table:not([class]) {
 }
 html {
   font-family: system-ui, "LXGW WenKai Screen", "HarmonyOS_Regular", "Noto Serif SC", "Microsoft Yahei", "Segoe UI", -apple-system, Roboto, Ubuntu, "Helvetica Neue", Arial, "WenQuanYi Micro Hei", sans-serif;
-  font-size: 18px;
+  font-size: 17px;
   -webkit-text-size-adjust: 100%;
   -ms-text-size-adjust: 100%;
   scroll-behavior: smooth;
