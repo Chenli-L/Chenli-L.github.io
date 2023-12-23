@@ -126,7 +126,7 @@ const init = {
               highlightItem.addClass("active")
               const e0 = document.querySelector('.widgets')
               const e1 = document.querySelector('#data-toc a.toc-link[href="' + encodeURI(link) + '"]')
-              const offsetBottom = e1.getBoundingClientRect().bottom - e0.getBoundingClientRect().bottom + 100
+              const offsetBottom = e1.getBoundingClientRect().bottom - e0.getBoundingClientRect().bottom + 200
               const offsetTop = e1.getBoundingClientRect().top - e0.getBoundingClientRect().top - 64
               if (offsetTop < 0) {
                 e0.scrollBy(0, offsetTop)
@@ -245,7 +245,7 @@ if (stellar.plugins.stellar) {
       if (els != undefined && els.length > 0) {
         stellar.jQuery(() => {
           stellar.loadScript(js, { defer: true });
-          if (key == 'timeline') {
+          if (key == 'timeline' || 'memos') {
             stellar.loadScript(stellar.plugins.marked);
           }
         })
@@ -254,61 +254,31 @@ if (stellar.plugins.stellar) {
   }
 }
 
-// ------------------- start 首页置顶文章轮播  新增
+// swiper
 if (stellar.plugins.swiper) {
- const swiper_container = document.getElementById('swiper_container');
- if (swiper_container !== undefined) {
-   stellar.loadCSS(stellar.plugins.customSwiperTopArticle.css);
-   stellar.loadScript(stellar.plugins.customSwiperTopArticle.js, {defer:true}).then(function () {
-     var swiper = new Swiper('.blog-slider', {
-       passiveListeners: true,
-       spaceBetween: 30,
-       effect: 'fade',
-       loop: true,
-       autoplay: {
-         disableOnInteraction: true,
-         delay: 3000
-       },
-       mousewheel: false,
-       // autoHeight: true,
-       pagination: {
-         el: '.blog-slider__pagination',
-         clickable: true,
-       }
-     });
-     swiper_container.onmouseenter = function() {
-       swiper.autoplay.stop();
-     };
-     swiper_container.onmouseleave = function() {
-       swiper.autoplay.start();
-     }
-   });
- }
-// ------------------- end 首页置顶文章轮播  新增
-
- // swiper
- const swiper_api = document.getElementById('swiper-api');
- if (swiper_api != undefined) {
-   stellar.loadCSS(stellar.plugins.swiper.css);
-   stellar.loadScript(stellar.plugins.swiper.js, {defer:true}).then(function () {
-     var swiper = new Swiper('.swiper-container', {
-       slidesPerView: 'auto',
-       spaceBetween: 8,
-       centeredSlides: true,
-       loop: true,
-       pagination: {
-         el: '.swiper-pagination',
-         clickable: true,
-       },
-       navigation: {
-         nextEl: '.swiper-button-next',
-         prevEl: '.swiper-button-prev',
-       },
-     });
-   })
- }
+  const swiper_api = document.getElementById('swiper-api');
+  if (swiper_api != undefined) {
+    stellar.loadCSS(stellar.plugins.swiper.css);
+    stellar.loadScript(stellar.plugins.swiper.js, { defer: true }).then(function () {
+      const effect = swiper_api.getAttribute('effect') || '';
+      var swiper = new Swiper('.swiper#swiper-api', {
+        slidesPerView: 'auto',
+        spaceBetween: 8,
+        centeredSlides: true,
+        effect: effect,
+        loop: true,
+        pagination: {
+          el: '.swiper-pagination',
+          clickable: true,
+        },
+        navigation: {
+          nextEl: '.swiper-button-next',
+          prevEl: '.swiper-button-prev',
+        },
+      });
+    })
+  }
 }
-
 
 // preload
 if (stellar.plugins.preload) {
@@ -329,13 +299,35 @@ if (stellar.plugins.preload) {
   }
 }
 
+function loadFancybox() {
+  stellar.loadCSS(stellar.plugins.fancybox.css);
+  stellar.loadScript(stellar.plugins.fancybox.js, { defer: true }).then(function () {
+    Fancybox.bind(selector, {
+      groupAll: true,
+      hideScrollbar: false,
+      Thumbs: {
+        autoStart: false,
+      },
+      caption: function (fancybox, carousel, slide) {
+        return slide.$trigger.alt || null
+      }
+    });
+  })
+}
 // fancybox
 if (stellar.plugins.fancybox) {
   let selector = 'img[fancybox]:not(.error)';
   if (stellar.plugins.fancybox.selector) {
     selector += `, ${stellar.plugins.fancybox.selector}`
   }
-  if (document.querySelectorAll(selector).length !== 0) {
+  var needFancybox = document.querySelectorAll(selector).length !== 0;
+  if (!needFancybox) {
+    const els = document.getElementsByClassName('stellar-memos-api');
+    if (els != undefined && els.length > 0) {
+      needFancybox = true;
+    }
+  }
+  if (needFancybox) {
     stellar.loadCSS(stellar.plugins.fancybox.css);
     stellar.loadScript(stellar.plugins.fancybox.js, { defer: true }).then(function () {
       Fancybox.bind(selector, {
