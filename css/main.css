@@ -3076,7 +3076,6 @@ details.folding[child=iframe] >div.body {
   border-radius: 12px;
   background: var(--theme-block);
   border: 1px solid var(--theme-border);
-  border: 1px solid var(--theme-border);
   overflow: hidden;
   color: var(--text-p1);
   line-height: 1.5;
