@@ -1,0 +1,370 @@
+<!DOCTYPE html>
+<html lang='zh-CN'>
+
+<head>
+  <meta name="generator" content="Hexo 6.3.0">
+  <meta name="hexo-theme" content="https://github.com/xaoxuu/hexo-theme-stellar/tree/1.21.0">
+  <meta charset="utf-8">
+  
+
+  <meta http-equiv='x-dns-prefetch-control' content='on' />
+  <link rel='dns-prefetch' href='https://gcore.jsdelivr.net'>
+  <link rel="preconnect" href="https://gcore.jsdelivr.net" crossorigin>
+  <link rel='dns-prefetch' href='//unpkg.com'>
+
+  <meta name="renderer" content="webkit">
+  <meta name="force-rendering" content="webkit">
+  <meta http-equiv="X-UA-Compatible" content="IE=Edge,chrome=1">
+  <meta name="HandheldFriendly" content="True" >
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta name="theme-color" content="#f8f8f8">
+  
+  <title>Stellar主题添加置顶轮播功能 - 二月初二</title>
+
+  
+    <meta name="description" content="快速开始在hexo-stellar主题的版式或功能上是没有置顶轮播文章功能的,那么这里就教大家怎么添加这个功能.让我们的文章在我们的播客更显眼,让更多人看到我们的文章,分享知识.">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Stellar主题添加置顶轮播功能">
+<meta property="og:url" content="http://chenliss.cn/2023/08/05/stellar%E4%B8%BB%E9%A2%98%E6%B7%BB%E5%8A%A0%E7%BD%AE%E9%A1%B6%E8%BD%AE%E6%92%AD%E5%8A%9F%E8%83%BD/index.html">
+<meta property="og:site_name" content="二月初二">
+<meta property="og:description" content="快速开始在hexo-stellar主题的版式或功能上是没有置顶轮播文章功能的,那么这里就教大家怎么添加这个功能.让我们的文章在我们的播客更显眼,让更多人看到我们的文章,分享知识.">
+<meta property="og:locale" content="zh_CN">
+<meta property="article:published_time" content="2023-08-04T16:00:00.000Z">
+<meta property="article:modified_time" content="2023-12-25T04:46:54.187Z">
+<meta property="article:author" content="Chenli">
+<meta property="article:tag" content="教程">
+<meta property="article:tag" content="stellar">
+<meta property="article:tag" content="置顶轮播">
+<meta property="article:tag" content="功能">
+<meta property="article:tag" content="hexo">
+<meta name="twitter:card" content="summary_large_image">
+  
+  
+  
+  <meta name="keywords" content="教程,stellar,置顶轮播,功能,hexo">
+
+  <!-- feed -->
+  
+
+  
+    
+<link rel="stylesheet" href="/css/main.css">
+
+  
+
+  
+    <link rel="shortcut icon" href="https://bu.dusays.com/2023/08/17/64dcf6a805f44.png">
+  
+
+  
+
+  
+
+
+  
+    
+      <link rel="stylesheet" href="https://fastly.jsdelivr.net/npm/lxgw-wenkai-screen-webfont@1.1.0/style.css" media="all" />
+    
+  
+</head>
+
+<body>
+  
+
+<div class="l_cover post"><div class="cover"><div class="lazy img bg" data-bg="https://bu.dusays.com/2023/08/15/64da6c7a7ba89.jpg"></div></div></div>
+
+
+  <div class='l_body' id='start'>
+    <aside class='l_left' layout='post'>
+    
+
+  
+
+<header class="header"><div class="logo-wrap"><a class="avatar" href="/about/"><div class="bg" style="opacity:0;background-image:url(https://gcore.jsdelivr.net/gh/cdn-x/placeholder@1.0.4/avatar/round/rainbow64@3x.webp);"></div><img no-lazy class="avatar" src="https://bu.dusays.com/2023/09/02/64f2900d6f69a.jpg" onerror="javascript:this.classList.add('error');this.src='https://gcore.jsdelivr.net/gh/cdn-x/placeholder@1.0.4/image/2659360.svg';"></a><a class="title" href="/"><div class="main" ff="title">二月初二</div><div class="sub normal cap">分享牛肉,记录牛肉</div><div class="sub hover cap" style="opacity:0"> Designed by 牛肉佬Chenli</div></a></div>
+
+<nav class="menu dis-select"><a class="nav-item active" href="/">首页</a><a class="nav-item" href="/wiki/">专栏</a><a class="nav-item" href="/friends/">友链</a><a class="nav-item" href="/about/">空间</a></nav>
+</header>
+
+
+<div class="widgets">
+<widget class="widget-wrapper recent"><div class="widget-header cap theme dis-select"><span class="name">最近更新</span></div><div class="widget-body related-posts fs14"><a class="item title" href="/2023/12/30/2023%E6%89%8B%E6%9C%BA%E6%8A%A5%E5%91%8A/"><span class="title">我的2023手机APP报告</span></a><a class="item title" href="/2024/01/06/%E8%90%A5%E8%BF%90/"><span class="title">营运</span></a><a class="item title" href="/2024/01/04/%E6%8A%95%E8%B5%84%E8%90%A5%E8%BF%90/"><span class="title">投资营运篇</span></a><a class="item title" href="/2023/08/16/%E8%B4%A2%E5%8A%A1%E7%AE%A1%E7%90%86%E5%85%AC%E5%BC%8F-%E8%B4%A2%E5%8A%A1%E5%88%86%E6%9E%90%E7%AF%87/"><span class="title">财务管理公式-财务分析篇</span></a><a class="item title" href="/2023/08/16/%E8%B4%A2%E5%8A%A1%E7%AE%A1%E7%90%86%E5%85%AC%E5%BC%8F-%E6%8A%95%E8%B5%84%E7%AE%A1%E7%90%86%E7%AF%87/"><span class="title">财务管理公式-投资管理篇</span></a></div></widget>
+
+
+<widget class="widget-wrapper toc single" id="data-toc"><div class="widget-header cap dis-select"><span class="name">Stellar主题添加置顶轮播功能</span></div><div class="widget-body fs14"><div class="doc-tree active"><ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#%E5%BF%AB%E9%80%9F%E5%BC%80%E5%A7%8B"><span class="toc-text">快速开始</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E7%AC%AC%E4%B8%80%E6%AD%A5%E4%BF%AE%E6%94%B9"><span class="toc-text">第一步修改</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E7%AC%AC%E4%BA%8C%E6%AD%A5%E4%BF%AE%E6%94%B9"><span class="toc-text">第二步修改</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E7%BB%93%E5%B0%BE"><span class="toc-text">结尾</span></a></li></ol></div></div></widget>
+
+
+</div>
+<footer class="footer dis-select"><div class="social-wrap"><a class="social" href="https://github.com/Chenli-L" target="_blank" rel="external nofollow noopener noreferrer"><img class="lazy" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAABGdBTUEAALGPC/xhBQAAADhlWElmTU0AKgAAAAgAAYdpAAQAAAABAAAAGgAAAAAAAqACAAQAAAABAAAAAaADAAQAAAABAAAAAQAAAADa6r/EAAAAC0lEQVQIHWNgAAIAAAUAAY27m/MAAAAASUVORK5CYII=" data-src="https://gcore.jsdelivr.net/gh/cdn-x/placeholder@1.0.4/social/08a41b181ce68.svg"/></a><a class="social" href="https://y.qq.com/n/ryqq/singer/001fNHEf1SFEFN" target="_blank" rel="external nofollow noopener noreferrer"><img class="lazy" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAABGdBTUEAALGPC/xhBQAAADhlWElmTU0AKgAAAAgAAYdpAAQAAAABAAAAGgAAAAAAAqACAAQAAAABAAAAAaADAAQAAAABAAAAAQAAAADa6r/EAAAAC0lEQVQIHWNgAAIAAAUAAY27m/MAAAAASUVORK5CYII=" data-src="https://gcore.jsdelivr.net/gh/cdn-x/placeholder@1.0.4/social/3845874.svg"/></a><a class="social" href="/wiki/photo/" rel="noopener noreferrer"><img class="lazy" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAABGdBTUEAALGPC/xhBQAAADhlWElmTU0AKgAAAAgAAYdpAAQAAAABAAAAGgAAAAAAAqACAAQAAAABAAAAAaADAAQAAAABAAAAAQAAAADa6r/EAAAAC0lEQVQIHWNgAAIAAAUAAY27m/MAAAAASUVORK5CYII=" data-src="https://gcore.jsdelivr.net/gh/cdn-x/placeholder@1.0.4/social/3616429.svg"/></a><a class="social" href="/likes/" rel="noopener noreferrer"><img class="lazy" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAABGdBTUEAALGPC/xhBQAAADhlWElmTU0AKgAAAAgAAYdpAAQAAAABAAAAGgAAAAAAAqACAAQAAAABAAAAAaADAAQAAAABAAAAAQAAAADa6r/EAAAAC0lEQVQIHWNgAAIAAAUAAY27m/MAAAAASUVORK5CYII=" data-src="https://gcore.jsdelivr.net/gh/cdn-x/placeholder@1.0.4/social/942ebbf1a4b91.svg"/></a></div></footer>
+
+    </aside>
+    <div class='l_main'>
+      
+
+      
+
+
+
+<div class="bread-nav fs12"><div class="left"><div id="breadcrumb"><a class="cap breadcrumb" href="/">主页</a><span class="sep"></span><a class="cap breadcrumb" href="/">首页</a><span class="sep"></span><a class="cap breadcrumb-link" href="/categories/hexo/">hexo</a></div><div id="post-meta">
+    <span>发布于&nbsp;<time datetime="2023-08-04T16:00:00.000Z">2023-08-05</time></span>
+    
+    <span>更新于&nbsp;<time datetime="2023-12-25T04:46:54.187Z">2023-12-25</time></span>
+    </div></div></div>
+
+<article class='md-text content post'>
+<h1 class="article-title"><span>Stellar主题添加置顶轮播功能</span></h1>
+<h1 id="快速开始"><a href="#快速开始" class="headerlink" title="快速开始"></a>快速开始</h1><p>在hexo-stellar主题的版式或功能上是没有置顶轮播文章功能的,那么这里就教大家怎么添加这个功能.让我们的文章在我们的播客更显眼,让更多人看到我们的文章,分享知识.</p>
+<span id="more"></span>
+<pre><code> 在hexo-stellar主题的版式或功能上是没有置顶轮播文章功能的,那么这里就教大家怎么添加这个功能.让我们的文章在我们的播客钟更显眼,让更多人看到我们的文章,分享知识.
+ 首先,应该在下面列出的地址上找到相应的位置
+</code></pre>
+<h1 id="第一步修改"><a href="#第一步修改" class="headerlink" title="第一步修改"></a>第一步修改</h1><p><code>layout/index.ejs</code></p>
+<pre><code> 然后在就在相应位置上添加上我们以下的代码.
+</code></pre>
+<details class="tag-plugin colorful folding" color="cyan" child="codeblock" open><summary><span>可折叠的代码框</span></summary><div class="body"><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br></pre></td><td class="code"><pre><span class="line">function layout_post_pin_article(type,post,content)&#123;</span><br><span class="line">  var el=&#x27;&#x27;;</span><br><span class="line">  if(post.post===undefined)&#123;</span><br><span class="line">    post.post=&#x27;article&#x27;;</span><br><span class="line">  &#125;</span><br><span class="line">  //文章简述</span><br><span class="line">  var articleDescription=&#x27;&#x27;;</span><br><span class="line">  if(post.excerpt)&#123;</span><br><span class="line">    articleDescription=strip_html(post.excerpt)</span><br><span class="line">  &#125;else if(post.description)&#123;</span><br><span class="line">    articleDescription=post.description</span><br><span class="line">  &#125;else if(post.content&amp;&amp;theme.article.auto_excerpt&gt;0)&#123;</span><br><span class="line">    articleDescription=truncate(strip_html(post.content),&#123;length:theme.article.auto_excerpt&#125;)</span><br><span class="line">  &#125;</span><br><span class="line"></span><br><span class="line">  el +=&#x27;&lt;div class=&quot;blog-slider__item swiper-slide&quot;&gt;&#x27;;</span><br><span class="line">  el +=&#x27;&lt;a class=&quot;blog-slider__img&quot; href=&quot;&#x27; + url_for(post.link || post.path) + &#x27;&quot;&gt;&#x27;;</span><br><span class="line">  el +=&#x27;&lt;img width=&quot;48&quot; height=&quot;48&quot; no-lazy src=&quot;&#x27; + post.swiper_thumbnail + &#x27;&quot; alt=&quot;&quot;/&gt;&#x27;;</span><br><span class="line">  el +=&#x27;&lt;/a&gt;&#x27;;</span><br><span class="line">  el +=&#x27;&lt;div class=&quot;blog-slider__content&quot;&gt;&#x27;;</span><br><span class="line">  el +=&#x27;&lt;span class=&quot;blog-slider__code&quot;&gt;&#x27;+ date(post.date,config.date_format) +&#x27;&lt;/span&gt;&#x27;;</span><br><span class="line">  el +=&#x27;&lt;a class=&quot;blog-slider__title&quot; href=&quot;&#x27; + url_for(post.link || post.path) + &#x27;&quot; title=&quot;&#x27;+ (post.title || post.seo_title) +&#x27;&quot;&gt;&#x27;+(post.title || post.seo_title) +&#x27;&lt;/a&gt;&#x27;;</span><br><span class="line">  el +=&#x27;&lt;div class=&quot;blog-slider__text&quot;&gt;&#x27;+articleDescription +&#x27;&lt;/div&gt;&#x27;;</span><br><span class="line">  el +=&#x27;&lt;a class=&quot;blog-slider__button&quot; href=&quot;&#x27; + url_for(post.link || post.path) + &#x27;&quot;&gt;详情&lt;/a&gt;&#x27;;</span><br><span class="line">  el +=&#x27;&lt;/div&gt;&#x27;;</span><br><span class="line">  el +=&#x27;&lt;/div&gt;&#x27;;</span><br><span class="line">  return el;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">function layout_posts(partial) &#123;</span><br><span class="line">  var el = &#x27;&#x27;;</span><br><span class="line">  el += &#x27;&lt;div class=&quot;post-list post&quot;&gt;&#x27;;</span><br><span class="line">  if (is_home()) &#123;</span><br><span class="line">    // pinned posts</span><br><span class="line">    const pinned = site.posts.filter(function(post)&#123;</span><br><span class="line">      return post.pin !== undefined;</span><br><span class="line">    &#125;).sort((config.index_generator &amp;&amp; config.index_generator.order_by) || &#x27;-date&#x27;);</span><br><span class="line"></span><br><span class="line">    if (page.current === 1) &#123;</span><br><span class="line">      el += &#x27;&lt;div id=&quot;_custom-post-categories&quot;&gt;&lt;/div&gt;&#x27;;</span><br><span class="line">      if(theme.customSwiperTopArticle.enable)&#123;</span><br><span class="line">        el+=&#x27;&lt;div class=&quot;blog-slider swiper-container-fade swiper-container-horizontal&quot; id=&quot;swiper_container&quot;&gt;&#x27;;</span><br><span class="line">        el+=&#x27;&lt;div class=&quot;blog-slider__wrp swiper-wrapper&quot;&gt;&#x27;;</span><br><span class="line">        pinned.forEach((post,i)=&gt;&#123;</span><br><span class="line">          el+=layout_post_pin_article(&#x27;post&#x27;,post,partial(post));</span><br><span class="line">        &#125;);</span><br><span class="line">        el+=&#x27;&lt;/div&gt;&#x27;;</span><br><span class="line">        el+=&#x27;&lt;div class=&quot;blog-slider__pagination swiper-pagination-clickable swiper-pagination-bullets&quot;&gt;&lt;/div&gt;&#x27;;</span><br><span class="line">        el+=&#x27;&lt;/div&gt;&#x27;;</span><br><span class="line">      &#125;else&#123;</span><br><span class="line">        pinned.forEach((post,i)=&gt;&#123;</span><br><span class="line">          el += layout_post_card(&#x27;post&#x27;,post,partial(post));</span><br><span class="line">        &#125;);</span><br><span class="line">      &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    // unpinned posts</span><br><span class="line">    page.posts.each(function(post)&#123;</span><br><span class="line">      if (theme.customSwiperTopArticle.enable) &#123;</span><br><span class="line">        el += layout_post_card(&#x27;post&#x27;, post, partial(post));</span><br><span class="line">      &#125;else&#123;</span><br><span class="line">        if(post.pin == undefined)&#123;</span><br><span class="line">          el += layout_post_card(&#x27;post&#x27;,post,partial(post));</span><br><span class="line">        &#125;</span><br><span class="line">      &#125;</span><br><span class="line">    &#125;)</span><br><span class="line">  &#125; else &#123;</span><br><span class="line">    page.posts.each(function(post)&#123;</span><br><span class="line">      el += layout_post_card(&#x27;post&#x27;, post, partial(post));</span><br><span class="line">    &#125;)</span><br><span class="line">  &#125;</span><br><span class="line">  el += &#x27;&lt;/div&gt;&#x27;;</span><br><span class="line">  return el;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></div></details>
+
+<pre><code> 先不要着急,因为我们还没有搞完.还有下面的地方需要修改
+</code></pre>
+<h1 id="第二步修改"><a href="#第二步修改" class="headerlink" title="第二步修改"></a>第二步修改</h1><p><code>swiperstyle.styl</code></p>
+<details class="tag-plugin colorful folding" color="blue" child="codeblock"><summary><span>可折叠的代码框</span></summary><div class="body"><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br><span class="line">84</span><br><span class="line">85</span><br><span class="line">86</span><br><span class="line">87</span><br><span class="line">88</span><br><span class="line">89</span><br><span class="line">90</span><br><span class="line">91</span><br><span class="line">92</span><br><span class="line">93</span><br><span class="line">94</span><br><span class="line">95</span><br><span class="line">96</span><br><span class="line">97</span><br><span class="line">98</span><br><span class="line">99</span><br><span class="line">100</span><br><span class="line">101</span><br><span class="line">102</span><br><span class="line">103</span><br><span class="line">104</span><br><span class="line">105</span><br><span class="line">106</span><br><span class="line">107</span><br><span class="line">108</span><br><span class="line">109</span><br><span class="line">110</span><br><span class="line">111</span><br><span class="line">112</span><br><span class="line">113</span><br><span class="line">114</span><br><span class="line">115</span><br><span class="line">116</span><br><span class="line">117</span><br><span class="line">118</span><br><span class="line">119</span><br><span class="line">120</span><br><span class="line">121</span><br><span class="line">122</span><br><span class="line">123</span><br><span class="line">124</span><br><span class="line">125</span><br><span class="line">126</span><br><span class="line">127</span><br><span class="line">128</span><br><span class="line">129</span><br><span class="line">130</span><br><span class="line">131</span><br><span class="line">132</span><br><span class="line">133</span><br><span class="line">134</span><br><span class="line">135</span><br><span class="line">136</span><br><span class="line">137</span><br><span class="line">138</span><br><span class="line">139</span><br><span class="line">140</span><br><span class="line">141</span><br><span class="line">142</span><br><span class="line">143</span><br><span class="line">144</span><br><span class="line">145</span><br><span class="line">146</span><br><span class="line">147</span><br><span class="line">148</span><br><span class="line">149</span><br><span class="line">150</span><br><span class="line">151</span><br><span class="line">152</span><br><span class="line">153</span><br><span class="line">154</span><br><span class="line">155</span><br><span class="line">156</span><br><span class="line">157</span><br><span class="line">158</span><br><span class="line">159</span><br><span class="line">160</span><br><span class="line">161</span><br><span class="line">162</span><br><span class="line">163</span><br><span class="line">164</span><br><span class="line">165</span><br><span class="line">166</span><br><span class="line">167</span><br><span class="line">168</span><br><span class="line">169</span><br><span class="line">170</span><br><span class="line">171</span><br><span class="line">172</span><br><span class="line">173</span><br><span class="line">174</span><br><span class="line">175</span><br><span class="line">176</span><br><span class="line">177</span><br><span class="line">178</span><br><span class="line">179</span><br><span class="line">180</span><br><span class="line">181</span><br><span class="line">182</span><br><span class="line">183</span><br><span class="line">184</span><br><span class="line">185</span><br><span class="line">186</span><br><span class="line">187</span><br><span class="line">188</span><br><span class="line">189</span><br><span class="line">190</span><br><span class="line">191</span><br><span class="line">192</span><br><span class="line">193</span><br><span class="line">194</span><br><span class="line">195</span><br><span class="line">196</span><br><span class="line">197</span><br><span class="line">198</span><br><span class="line">199</span><br><span class="line">200</span><br><span class="line">201</span><br><span class="line">202</span><br><span class="line">203</span><br><span class="line">204</span><br><span class="line">205</span><br><span class="line">206</span><br><span class="line">207</span><br><span class="line">208</span><br><span class="line">209</span><br></pre></td><td class="code"><pre><span class="line">div#swiper_container</span><br><span class="line">  background var(--card);</span><br><span class="line">  z-index auto</span><br><span class="line">.blog-slider</span><br><span class="line">  position relative</span><br><span class="line">  border-radius 12px 12px 12px 12px</span><br><span class="line">  margin auto</span><br><span class="line">  padding: 10px</span><br><span class="line">  transition all .3s</span><br><span class="line"></span><br><span class="line">.blog-slider__item</span><br><span class="line">  display flex</span><br><span class="line">  align-items center</span><br><span class="line">  &amp;.swiper-slide-active</span><br><span class="line">    .blog-slider__img</span><br><span class="line">      img</span><br><span class="line">        opacity 1</span><br><span class="line">        transition-delay .3s</span><br><span class="line">    .blog-slider__content</span><br><span class="line">      &amp; &gt; *</span><br><span class="line">        opacity 1</span><br><span class="line">        transform none</span><br><span class="line">      &amp; &gt; *:nth-child(1)</span><br><span class="line">        transition-delay 0.3s</span><br><span class="line">      &amp; &gt; *:nth-child(2)</span><br><span class="line">        transition-delay 0.4s</span><br><span class="line">      &amp; &gt; *:nth-child(3)</span><br><span class="line">        transition-delay 0.5s</span><br><span class="line">      &amp; &gt; *:nth-child(4)</span><br><span class="line">        transition-delay 0.6s</span><br><span class="line">      &amp; &gt; *:nth-child(5)</span><br><span class="line">        transition-delay 0.7s</span><br><span class="line">      &amp; &gt; *:nth-child(6)</span><br><span class="line">        transition-delay 0.8s</span><br><span class="line">      &amp; &gt; *:nth-child(7)</span><br><span class="line">        transition-delay 0.9s</span><br><span class="line">      &amp; &gt; *:nth-child(8)</span><br><span class="line">        transition-delay 1s</span><br><span class="line">      &amp; &gt; *:nth-child(9)</span><br><span class="line">        transition-delay 1.1s</span><br><span class="line">      &amp; &gt; *:nth-child(10)</span><br><span class="line">        transition-delay 1.2s</span><br><span class="line">      &amp; &gt; *:nth-child(11)</span><br><span class="line">        transition-delay 1.3s</span><br><span class="line">      &amp; &gt; *:nth-child(12)</span><br><span class="line">        transition-delay 1.4s</span><br><span class="line">      &amp; &gt; *:nth-child(13)</span><br><span class="line">        transition-delay 1.5s</span><br><span class="line">      &amp; &gt; *:nth-child(14)</span><br><span class="line">        transition-delay 1.6s</span><br><span class="line">      &amp; &gt; *:nth-child(15)</span><br><span class="line">        transition-delay 1.7s</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"></span><br><span class="line">.blog-slider__img</span><br><span class="line">  width 300px</span><br><span class="line">  flex-shrink 0</span><br><span class="line">  height 200px</span><br><span class="line">  padding 10px</span><br><span class="line">  border-radius 20px</span><br><span class="line">  transform translateX(0px)</span><br><span class="line">  overflow hidden</span><br><span class="line">  &amp;:after</span><br><span class="line">    content &#x27;&#x27;</span><br><span class="line">    position absolute</span><br><span class="line">    top 0</span><br><span class="line">    left 0</span><br><span class="line">    width 100%</span><br><span class="line">    height 100%</span><br><span class="line">    border-radius 15px</span><br><span class="line">    opacity 0.8</span><br><span class="line">  img</span><br><span class="line">    width 100%</span><br><span class="line">    height 100%</span><br><span class="line">    object-fit cover</span><br><span class="line">    display block</span><br><span class="line">    opacity 0</span><br><span class="line">    border-radius 5px</span><br><span class="line">    transition all .3s</span><br><span class="line"></span><br><span class="line">.blog-slider__content</span><br><span class="line">  padding-right 50px</span><br><span class="line">  padding-left 25px</span><br><span class="line">  &amp; &gt; *</span><br><span class="line">    opacity 0</span><br><span class="line">    transform translateY(25px)</span><br><span class="line">    transition all .4s</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">.blog-slider__code</span><br><span class="line">  text-align left</span><br><span class="line">  color var(--text-p3)</span><br><span class="line">  margin-bottom 10px</span><br><span class="line">  display block</span><br><span class="line">  font-weight 500</span><br><span class="line"></span><br><span class="line">.blog-slider__title</span><br><span class="line">  text-align left</span><br><span class="line">  font-size $fs-h3</span><br><span class="line">  font-weight 500</span><br><span class="line">  color var(--text-p1)</span><br><span class="line">  margin-bottom 15px</span><br><span class="line">  -webkit-line-clamp 1</span><br><span class="line">  display -webkit-box</span><br><span class="line">  overflow hidden</span><br><span class="line">  -webkit-box-orient vertical</span><br><span class="line"></span><br><span class="line">.blog-slider__text</span><br><span class="line">  text-align left</span><br><span class="line">  font-size $fs-h5</span><br><span class="line">  color var(--text-p3)</span><br><span class="line">  -webkit-line-clamp 3</span><br><span class="line">  display -webkit-box</span><br><span class="line">  overflow hidden</span><br><span class="line">  -webkit-box-orient vertical</span><br><span class="line">  margin-bottom 15px</span><br><span class="line">  line-height 1.5em</span><br><span class="line">  width 100%</span><br><span class="line">  word-break break-all</span><br><span class="line">  word-wrap break-word</span><br><span class="line"></span><br><span class="line">.blog-slider__button</span><br><span class="line">  display inline-flex</span><br><span class="line">  background-color var(--block)</span><br><span class="line">  padding 14px 14px</span><br><span class="line">  border-radius 8px</span><br><span class="line">  color var(--text-p1)</span><br><span class="line">  text-decoration none</span><br><span class="line">  font-weight 500</span><br><span class="line">  justify-content center</span><br><span class="line">  text-align center</span><br><span class="line">  letter-spacing 1px</span><br><span class="line">  display none</span><br><span class="line">  &amp;:hover</span><br><span class="line">    background-color var(--block-hover)</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">.blog-slider .swiper-container-horizontal &gt; .swiper-pagination-bullets, .blog-slider .swiper-pagination-custom, .blog-slider .swiper-pagination-fraction</span><br><span class="line">  bottom 10px</span><br><span class="line">  left 0</span><br><span class="line">  width 100%</span><br><span class="line"></span><br><span class="line">.blog-slider__pagination</span><br><span class="line">  position absolute</span><br><span class="line">  z-index 1</span><br><span class="line">  right 20px</span><br><span class="line">  width 11px !important</span><br><span class="line">  text-align center</span><br><span class="line">  left auto !important</span><br><span class="line">  top 50%</span><br><span class="line">  bottom auto !important</span><br><span class="line">  transform translateY(-50%)</span><br><span class="line">  &amp;.swiper-pagination-bullets</span><br><span class="line">    .swiper-pagination-bullet</span><br><span class="line">      margin 8px 0 !important</span><br><span class="line">  .swiper-pagination-bullet</span><br><span class="line">    width 11px</span><br><span class="line">    height 11px</span><br><span class="line">    display block</span><br><span class="line">    border-radius 10px</span><br><span class="line">    background #858585</span><br><span class="line">    opacity 0.2</span><br><span class="line">    transition all .3s</span><br><span class="line">  .swiper-pagination-bullet-active</span><br><span class="line">    opacity 1</span><br><span class="line">    background $color-theme</span><br><span class="line">    height 30px</span><br><span class="line"></span><br><span class="line">@media screen and (max-width: 600px)</span><br><span class="line">  .blog-slider__pagination</span><br><span class="line">    transform translateX(-50%)</span><br><span class="line">    left 50% !important</span><br><span class="line">    top 320px</span><br><span class="line">    width 100% !important</span><br><span class="line">    display flex</span><br><span class="line">    justify-content center</span><br><span class="line">    align-items center</span><br><span class="line"></span><br><span class="line">  .blog-slider__pagination</span><br><span class="line">    &amp;.swiper-pagination-bullets</span><br><span class="line">      .swiper-pagination-bullet</span><br><span class="line">        margin 0 5px !important</span><br><span class="line"></span><br><span class="line">  .blog-slider__pagination</span><br><span class="line">    .swiper-pagination-bullet-active</span><br><span class="line">      height 11px</span><br><span class="line">      width 30px</span><br><span class="line"></span><br><span class="line">  .blog-slider</span><br><span class="line">    min-height 350px</span><br><span class="line">    height auto</span><br><span class="line">    margin-bottom 10px</span><br><span class="line"></span><br><span class="line">  .blog-slider__content</span><br><span class="line">    margin-top 20px</span><br><span class="line">    text-align center</span><br><span class="line">    padding 0 30px</span><br><span class="line"></span><br><span class="line">  .blog-slider__item</span><br><span class="line">    flex-direction column</span><br><span class="line"></span><br><span class="line">  .blog-slider__img</span><br><span class="line">  .blog-slider__content</span><br><span class="line">    padding-left 10px</span><br><span class="line">    padding-right 10px</span><br><span class="line"></span><br><span class="line">  .blog-slider__pagination.swiper-pagination-clickable.swiper-pagination-bullets</span><br><span class="line">    top 230px</span><br></pre></td></tr></table></figure></div></details>
+
+<h1 id="结尾"><a href="#结尾" class="headerlink" title="结尾"></a>结尾</h1><pre><code> 这样就可以啦,可以`hexo g -d`看一下实际效果了
+ 如果还有什么不明白的可以前往大佬`酷小呵`的文章里看看
+</code></pre>
+<div class="tag-plugin link dis-select"><a class="link-card plain" title="stellar主题添加置顶轮播功能" href="https://www.kuhehe.top/2023/0470ef0bd0.html" target="_blank" rel="external nofollow noopener noreferrer" cardlink autofill="icon"><div class="left"><span class="title">stellar主题添加置顶轮播功能</span><span class="cap link fs12">https://www.kuhehe.top/2023/0470ef0bd0.html</span></div><div class="right"><div class="lazy img" data-bg="https://gcore.jsdelivr.net/gh/cdn-x/placeholder@1.0.4/link/8f277b4ee0ecd.svg"></div></div></a></div>
+
+<p>如果喜欢这个教程希望你能把这篇文章或者我的博客推荐给别人哦,也欢迎你来添加我的友链</p>
+<div class="tag-plugin link dis-select"><a class="link-card plain" title="我的邻居们" href="https://chenli-l.github.io/friends/" target="_blank" rel="external nofollow noopener noreferrer" cardlink autofill="icon"><div class="left"><span class="title">我的邻居们</span><span class="cap link fs12">https://chenli-l.github.io/friends/</span></div><div class="right"><div class="lazy img" data-bg="https://gcore.jsdelivr.net/gh/cdn-x/placeholder@1.0.4/link/8f277b4ee0ecd.svg"></div></div></a></div>
+
+
+<div class="article-footer reveal fs14">
+    <section id="license">
+      <div class="header"><span>许可协议</span></div>
+      <div class="body"><p>本文采用 <a target="_blank" rel="noopener" href="https://creativecommons.org/licenses/by-nc-sa/4.0/">署名-非商业性使用-相同方式共享 4.0 国际</a> 许可协议，由@Chenli编写，转载请注明出处。</p>
+</div>
+    </section>
+    
+    <section id="share">
+      <div class="header"><span>分享文章</span></div>
+      <div class="body">
+        <div class="link"><input class="copy-area" readonly="true" id="copy-link" value="http://chenliss.cn/2023/08/05/stellar%E4%B8%BB%E9%A2%98%E6%B7%BB%E5%8A%A0%E7%BD%AE%E9%A1%B6%E8%BD%AE%E6%92%AD%E5%8A%9F%E8%83%BD/" /></div>
+        <div class="social-wrap dis-select"><a class="social share-item wechat" onclick="util.toggle(&quot;qrcode-wechat&quot)"><img class="lazy" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAABGdBTUEAALGPC/xhBQAAADhlWElmTU0AKgAAAAgAAYdpAAQAAAABAAAAGgAAAAAAAqACAAQAAAABAAAAAaADAAQAAAABAAAAAQAAAADa6r/EAAAAC0lEQVQIHWNgAAIAAAUAAY27m/MAAAAASUVORK5CYII=" data-src="https://gcore.jsdelivr.net/gh/cdn-x/placeholder@1.0.9/social/b32ef3da1162a.svg"/></a><a class="social share-item weibo" target="_blank" rel="external nofollow noopener noreferrer" href="https://service.weibo.com/share/share.php?url=http://chenliss.cn/2023/08/05/stellar%E4%B8%BB%E9%A2%98%E6%B7%BB%E5%8A%A0%E7%BD%AE%E9%A1%B6%E8%BD%AE%E6%92%AD%E5%8A%9F%E8%83%BD/&title=Stellar主题添加置顶轮播功能 - 二月初二&pics=https://bu.dusays.com/2023/12/25/6588656474d74.png&summary=快速开始在hexo-stellar主题的版式或功能上是没有置顶轮播文章功能的,那么这里就教大家怎么添加这个功能.让我们的文章在我们的播客更显眼,让更多人看到我们的文章,分享知识."><img class="lazy" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAABGdBTUEAALGPC/xhBQAAADhlWElmTU0AKgAAAAgAAYdpAAQAAAABAAAAGgAAAAAAAqACAAQAAAABAAAAAaADAAQAAAABAAAAAQAAAADa6r/EAAAAC0lEQVQIHWNgAAIAAAUAAY27m/MAAAAASUVORK5CYII=" data-src="https://gcore.jsdelivr.net/gh/cdn-x/placeholder@1.0.9/social/80c07e4dbb303.svg"/></a><a class="social share-item email" href="mailto:?subject=Stellar主题添加置顶轮播功能 - 二月初二&amp;body=http://chenliss.cn/2023/08/05/stellar%E4%B8%BB%E9%A2%98%E6%B7%BB%E5%8A%A0%E7%BD%AE%E9%A1%B6%E8%BD%AE%E6%92%AD%E5%8A%9F%E8%83%BD/"><img class="lazy" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAABGdBTUEAALGPC/xhBQAAADhlWElmTU0AKgAAAAgAAYdpAAQAAAABAAAAGgAAAAAAAqACAAQAAAABAAAAAaADAAQAAAABAAAAAQAAAADa6r/EAAAAC0lEQVQIHWNgAAIAAAUAAY27m/MAAAAASUVORK5CYII=" data-src="https://gcore.jsdelivr.net/gh/cdn-x/placeholder@1.0.9/social/a1b00e20f425d.svg"/></a><a class="social share-item link" onclick="util.copy(&quot;copy-link&quot;, &quot;复制成功&quot;)"><img class="lazy" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAABGdBTUEAALGPC/xhBQAAADhlWElmTU0AKgAAAAgAAYdpAAQAAAABAAAAGgAAAAAAAqACAAQAAAABAAAAAaADAAQAAAABAAAAAQAAAADa6r/EAAAAC0lEQVQIHWNgAAIAAAUAAY27m/MAAAAASUVORK5CYII=" data-src="https://gcore.jsdelivr.net/gh/cdn-x/placeholder@1.0.9/social/8411ed322ced6.svg"/></a></div>
+        
+        <div class="qrcode" id="qrcode-wechat" style="visibility:hidden;height:0">
+          <img class="lazy" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAABGdBTUEAALGPC/xhBQAAADhlWElmTU0AKgAAAAgAAYdpAAQAAAABAAAAGgAAAAAAAqACAAQAAAABAAAAAaADAAQAAAABAAAAAQAAAADa6r/EAAAAC0lEQVQIHWNgAAIAAAUAAY27m/MAAAAASUVORK5CYII=" data-src="https://api.qrserver.com/v1/create-qr-code/?size=256x256&data=http://chenliss.cn/2023/08/05/stellar%E4%B8%BB%E9%A2%98%E6%B7%BB%E5%8A%A0%E7%BD%AE%E9%A1%B6%E8%BD%AE%E6%92%AD%E5%8A%9F%E8%83%BD/"/>
+        </div>
+        
+      </div>
+    </section>
+    </div>
+
+</article>
+
+<div class="related-wrap reveal" id="read-next"><section class="body"><div class="item" id="prev"><div class="note">较新文章</div><a href="/2023/08/06/%E5%88%A9%E7%94%A8Hexo%E5%92%8CGithub%E9%83%A8%E7%BD%B2%E9%9D%99%E6%80%81%E5%8D%9A%E5%AE%A2/">利用Hexo和Github部署静态博客</a></div><div class="item" id="next"><div class="note">较早文章</div><a href="/2023/08/03/hello-world/">Hello World</a></div></section></div>
+
+
+
+
+
+
+
+
+      
+<footer class="page-footer reveal fs12"><hr><div class="text"><p>本站由 <a href="/">@Chenli</a> 使用 <a target="_blank" rel="noopener" href="https://github.com/xaoxuu/hexo-theme-stellar">hexo-Stellar</a> 主题创建。<br>粤ICP备<a target="_blank" rel="noopener" href="http://beian.miit.gov.cn/">2023105130</a>号。萌ICP备<a target="_blank" rel="noopener" href="https://icp.gov.moe/?keyword=20232122">20232122</a>号。<br>本博客所有文章除特别声明外，均采用 <a target="_blank" rel="noopener" href="https://creativecommons.org/licenses/by-nc-sa/4.0/">CC BY-NC-SA 4.0</a> 许可协议，转载请注明出处。</p>
+<script type="text/javascript">
+function show_runtime() {
+    window.setTimeout("show_runtime()", 1000);
+    X = new Date("8/3/2023 00:00:00");
+    Y = new Date();
+    T = (Y.getTime() - X.getTime());
+    M = 24 * 60 * 60 * 1000;
+    a = T / M;
+    A = Math.floor(a);
+    b = (a - A) * 24;
+    B = Math.floor(b);
+    c = (b - B) * 60;
+    C = Math.floor((b - B) * 60);
+    D = Math.floor((c - C) * 60);
+    runtime_span.innerHTML = "⏱本站已艰难运行 " + A + "天" + B + "小时" + C + "分" + D + "秒"
+}
+show_runtime();
+</script>
+<p><span id="runtime_span"></span><br><a href="https://www.foreverblog.cn/go.html" target="_blank"> <img class="lazy" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAABGdBTUEAALGPC/xhBQAAADhlWElmTU0AKgAAAAgAAYdpAAQAAAABAAAAGgAAAAAAAqACAAQAAAABAAAAAaADAAQAAAABAAAAAQAAAADa6r/EAAAAC0lEQVQIHWNgAAIAAAUAAY27m/MAAAAASUVORK5CYII=" data-src="https://img.foreverblog.cn/wormhole_2.gif" alt="" style="width:auto;height:32px;" title="穿梭虫洞-随机访问十年之约友链博客"></a></p>
+</div></footer>
+
+      <div class='float-panel mobile-only blur' style='display:none'>
+  <button type='button' class='sidebar-toggle mobile' onclick='sidebar.toggle()'>
+    <svg class="icon" style="width: 1em; height: 1em;vertical-align: middle;fill: currentColor;overflow: hidden;" viewBox="0 0 1024 1024" version="1.1" xmlns="http://www.w3.org/2000/svg" p-id="15301"><path d="M566.407 808.3c26.9-0.1 49.3-20.8 51.6-47.6-1.9-27.7-23.9-49.7-51.6-51.6h-412.6c-28.2-1.4-52.6 19.5-55.5 47.6 2.3 26.8 24.6 47.5 51.6 47.6h416.5v4z m309.3-249.9c26.9-0.1 49.3-20.8 51.6-47.6-2.2-26.8-24.6-47.5-51.6-47.6h-721.9c-27.7-2.8-52.5 17.4-55.3 45.1-0.1 0.8-0.1 1.7-0.2 2.5 0.9 27.2 23.6 48.5 50.7 47.6H875.707z m-103.1-245.9c26.9-0.1 49.3-20.8 51.6-47.6-0.4-28.3-23.2-51.1-51.5-51.6h-618.9c-29.5-1.1-54.3 21.9-55.5 51.4v0.2c1.4 27.8 25.2 49.2 53 47.8 0.8 0 1.7-0.1 2.5-0.2h618.8z" p-id="15302"></path><path d="M566.407 808.3c26.9-0.1 49.3-20.8 51.6-47.6-1.9-27.7-23.9-49.7-51.6-51.6h-412.6c-28.2-1.4-52.6 19.5-55.5 47.6 1.9 27.7 23.9 49.7 51.6 51.6h416.5z m309.3-249.9c26.9-0.1 49.3-20.8 51.6-47.6-2.2-26.8-24.6-47.5-51.6-47.6h-721.9c-27.7-2.8-52.5 17.4-55.3 45.1-0.1 0.8-0.1 1.7-0.2 2.5 0.9 27.2 23.6 48.5 50.7 47.6H875.707z m-103.1-245.9c26.9-0.1 49.3-20.8 51.6-47.6-0.4-28.3-23.2-51.1-51.5-51.6h-618.9c-29.5-1.1-54.3 21.9-55.5 51.4v0.2c1.4 27.8 25.2 49.2 53 47.8 0.8 0 1.7-0.1 2.5-0.2h618.8z" p-id="15303"></path></svg>
+  </button>
+</div>
+
+    </div>
+  </div>
+  <div class='scripts'>
+    <script type="text/javascript">
+  const stellar = {
+    // 懒加载 css https://github.com/filamentgroup/loadCSS
+    loadCSS: (href, before, media, attributes) => {
+      var doc = window.document;
+      var ss = doc.createElement("link");
+      var ref;
+      if (before) {
+        ref = before;
+      } else {
+        var refs = (doc.body || doc.getElementsByTagName("head")[0]).childNodes;
+        ref = refs[refs.length - 1];
+      }
+      var sheets = doc.styleSheets;
+      if (attributes) {
+        for (var attributeName in attributes) {
+          if (attributes.hasOwnProperty(attributeName)) {
+            ss.setAttribute(attributeName, attributes[attributeName]);
+          }
+        }
+      }
+      ss.rel = "stylesheet";
+      ss.href = href;
+      ss.media = "only x";
+      function ready(cb) {
+        if (doc.body) {
+          return cb();
+        }
+        setTimeout(function () {
+          ready(cb);
+        });
+      }
+      ready(function () {
+        ref.parentNode.insertBefore(ss, before ? ref : ref.nextSibling);
+      });
+      var onloadcssdefined = function (cb) {
+        var resolvedHref = ss.href;
+        var i = sheets.length;
+        while (i--) {
+          if (sheets[i].href === resolvedHref) {
+            return cb();
+          }
+        }
+        setTimeout(function () {
+          onloadcssdefined(cb);
+        });
+      };
+      function loadCB() {
+        if (ss.addEventListener) {
+          ss.removeEventListener("load", loadCB);
+        }
+        ss.media = media || "all";
+      }
+      if (ss.addEventListener) {
+        ss.addEventListener("load", loadCB);
+      }
+      ss.onloadcssdefined = onloadcssdefined;
+      onloadcssdefined(loadCB);
+      return ss;
+    },
+
+    // 从 butterfly 和 volantis 获得灵感
+    loadScript: (src, opt) => new Promise((resolve, reject) => {
+      var script = document.createElement('script');
+      if (src.startsWith('/')){
+        src = stellar.config.root + src.substring(1);
+      }
+      script.src = src;
+      if (opt) {
+        for (let key of Object.keys(opt)) {
+          script[key] = opt[key]
+        }
+      } else {
+        // 默认异步，如果需要同步，第二个参数传入 {} 即可
+        script.async = true
+      }
+      script.onerror = reject
+      script.onload = script.onreadystatechange = function() {
+        const loadState = this.readyState
+        if (loadState && loadState !== 'loaded' && loadState !== 'complete') return
+        script.onload = script.onreadystatechange = null
+        resolve()
+      }
+      document.head.appendChild(script)
+    }),
+
+    // https://github.com/jerryc127/hexo-theme-butterfly
+    jQuery: (fn) => {
+      if (typeof jQuery === 'undefined') {
+        stellar.loadScript(stellar.plugins.jQuery).then(fn)
+      } else {
+        fn()
+      }
+    }
+  };
+  stellar.version = '1.21.0';
+  stellar.github = 'https://github.com/xaoxuu/hexo-theme-stellar/tree/1.21.0';
+  stellar.config = {
+    date_suffix: {
+      just: '刚刚',
+      min: '分钟前',
+      hour: '小时前',
+      day: '天前',
+      month: '个月前',
+    },
+    root : '/',
+  };
+
+  // required plugins (only load if needs)
+  stellar.plugins = {
+    jQuery: 'https://gcore.jsdelivr.net/npm/jquery@3.6.2/dist/jquery.min.js'
+  };
+
+  if ('local_search') {
+    stellar.search = {};
+    stellar.search.service = 'local_search';
+    if (stellar.search.service == 'local_search') {
+      let service_obj = Object.assign({}, {"field":"all","path":"/search.json","content":true,"sort":"-date"});
+      stellar.search[stellar.search.service] = service_obj;
+    }
+  }
+
+  // stellar js
+  stellar.plugins.stellar = Object.assign({"sites":"/js/plugins/sites.js","friends":"/js/plugins/friends.js","ghinfo":"/js/plugins/ghinfo.js","timeline":"/js/plugins/timeline.js","linkcard":"/js/plugins/linkcard.js","fcircle":"/js/plugins/fcircle.js","weibo":"/js/plugins/weibo.js"});
+
+  stellar.plugins.marked = Object.assign("https://cdn.bootcdn.net/ajax/libs/marked/4.0.18/marked.min.js");
+  // optional plugins
+  if ('true' == 'true') {
+    stellar.plugins.lazyload = Object.assign({"enable":true,"js":"https://gcore.jsdelivr.net/npm/vanilla-lazyload@17.8.3/dist/lazyload.min.js","transition":"blur"});
+  }
+  if ('true' == 'true') {
+    stellar.plugins.swiper = Object.assign({"enable":true,"css":"https://unpkg.com/swiper@8.4.5/swiper-bundle.min.css","js":"https://unpkg.com/swiper@8.4.5/swiper-bundle.min.js"});
+  }
+  if ('' == 'true') {
+    stellar.plugins.scrollreveal = Object.assign({"enable":null,"js":"https://gcore.jsdelivr.net/npm/scrollreveal@4.0.9/dist/scrollreveal.min.js","distance":"8px","duration":500,"interval":100,"scale":1});
+  }
+  if ('true' == 'true') {
+    stellar.plugins.preload = Object.assign({"enable":true,"service":"flying_pages","instant_page":"https://gcore.jsdelivr.net/gh/volantis-x/cdn-volantis@4.1.2/js/instant_page.js","flying_pages":"https://gcore.jsdelivr.net/gh/gijo-varghese/flying-pages@2.1.2/flying-pages.min.js"});
+  }
+  if ('true' == 'true') {
+    stellar.plugins.fancybox = Object.assign({"enable":true,"js":"https://gcore.jsdelivr.net/npm/@fancyapps/ui@4.0/dist/fancybox.umd.js","css":"https://gcore.jsdelivr.net/npm/@fancyapps/ui@4.0/dist/fancybox.css","selector":".swiper-slide img"});
+  }
+  if ('false' == 'true') {
+    stellar.plugins.heti = Object.assign({"enable":false,"css":"https://unpkg.com/heti@0.9.2/umd/heti.min.css","js":"https://unpkg.com/heti@0.9.2/umd/heti-addon.min.js"});
+  }
+  if ('true' == 'true') {
+    stellar.plugins.copycode = Object.assign({"enable":true,"js":"/js/plugins/copycode.js","default_text":"Copy","success_text":"Copied"});
+  }
+</script>
+
+<!-- required -->
+
+  
+<script src="/js/main.js" async></script>
+
+
+
+<!-- optional -->
+
+
+
+<!-- inject -->
+
+
+  </div>
+</body>
+</html>

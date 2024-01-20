@@ -1,0 +1,378 @@
+<!DOCTYPE html>
+<html lang='zh-CN'>
+
+<head>
+  <meta name="generator" content="Hexo 6.3.0">
+  <meta name="hexo-theme" content="https://github.com/xaoxuu/hexo-theme-stellar/tree/1.21.0">
+  <meta charset="utf-8">
+  
+
+  <meta http-equiv='x-dns-prefetch-control' content='on' />
+  <link rel='dns-prefetch' href='https://gcore.jsdelivr.net'>
+  <link rel="preconnect" href="https://gcore.jsdelivr.net" crossorigin>
+  <link rel='dns-prefetch' href='//unpkg.com'>
+
+  <meta name="renderer" content="webkit">
+  <meta name="force-rendering" content="webkit">
+  <meta http-equiv="X-UA-Compatible" content="IE=Edge,chrome=1">
+  <meta name="HandheldFriendly" content="True" >
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta name="theme-color" content="#f8f8f8">
+  
+  <title>ESP8266制作温湿度计 - 二月初二</title>
+
+  
+    <meta name="description" content="摘要使用esp8266制作一个带显示屏显示+手机APP远程查看信息的温湿度计。 所需材料[1] esp8266 ——相当于一个带wifi的微型电脑[2] dht 22 ——精度比dht11高的传感器，但是价格相对高点，也可以用dht11替代[3] micro usb数据线[4] 0.96寸 oled ——我这个oled是iic接口的，4个引脚就是iic接口[5] 杜邦线若干[6] 点灯科技app—">
+<meta property="og:type" content="article">
+<meta property="og:title" content="ESP8266制作温湿度计">
+<meta property="og:url" content="http://chenliss.cn/2023/09/03/ESP8266%E5%88%B6%E4%BD%9C%E6%B8%A9%E6%B9%BF%E5%BA%A6%E8%AE%A1/index.html">
+<meta property="og:site_name" content="二月初二">
+<meta property="og:description" content="摘要使用esp8266制作一个带显示屏显示+手机APP远程查看信息的温湿度计。 所需材料[1] esp8266 ——相当于一个带wifi的微型电脑[2] dht 22 ——精度比dht11高的传感器，但是价格相对高点，也可以用dht11替代[3] micro usb数据线[4] 0.96寸 oled ——我这个oled是iic接口的，4个引脚就是iic接口[5] 杜邦线若干[6] 点灯科技app—">
+<meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="https://bu.dusays.com/2023/09/02/64f3568913ba6.jpg">
+<meta property="og:image" content="https://bu.dusays.com/2023/09/02/64f356c30c9a9.jpg">
+<meta property="og:image" content="https://bu.dusays.com/2023/09/02/64f356e9e4c43.jpg">
+<meta property="og:image" content="https://bu.dusays.com/2023/09/02/64f3572b02ec3.jpg">
+<meta property="og:image" content="https://bu.dusays.com/2023/09/02/64f3576eb918c.jpg">
+<meta property="og:image" content="https://bu.dusays.com/2023/09/02/64f357aad0323.jpg">
+<meta property="article:published_time" content="2023-09-02T19:21:39.000Z">
+<meta property="article:modified_time" content="2023-12-25T04:32:12.436Z">
+<meta property="article:author" content="Chenli">
+<meta property="article:tag" content="教程">
+<meta property="article:tag" content="esp8266">
+<meta property="article:tag" content="DIY">
+<meta property="article:tag" content="温湿度计">
+<meta property="article:tag" content="资料">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:image" content="https://bu.dusays.com/2023/09/02/64f3568913ba6.jpg">
+  
+  
+  
+  <meta name="keywords" content="教程,esp8266,DIY,温湿度计,资料">
+
+  <!-- feed -->
+  
+
+  
+    
+<link rel="stylesheet" href="/css/main.css">
+
+  
+
+  
+    <link rel="shortcut icon" href="https://bu.dusays.com/2023/08/17/64dcf6a805f44.png">
+  
+
+  
+
+  
+
+
+  
+    
+      <link rel="stylesheet" href="https://fastly.jsdelivr.net/npm/lxgw-wenkai-screen-webfont@1.1.0/style.css" media="all" />
+    
+  
+</head>
+
+<body>
+  
+
+<div class="l_cover post"><div class="cover"><div class="lazy img bg" data-bg="https://bu.dusays.com/2023/09/02/64f3552ea3b60.jpg"></div></div></div>
+
+
+  <div class='l_body' id='start'>
+    <aside class='l_left' layout='post'>
+    
+
+  
+
+<header class="header"><div class="logo-wrap"><a class="avatar" href="/about/"><div class="bg" style="opacity:0;background-image:url(https://gcore.jsdelivr.net/gh/cdn-x/placeholder@1.0.4/avatar/round/rainbow64@3x.webp);"></div><img no-lazy class="avatar" src="https://bu.dusays.com/2023/09/02/64f2900d6f69a.jpg" onerror="javascript:this.classList.add('error');this.src='https://gcore.jsdelivr.net/gh/cdn-x/placeholder@1.0.4/image/2659360.svg';"></a><a class="title" href="/"><div class="main" ff="title">二月初二</div><div class="sub normal cap">分享牛肉,记录牛肉</div><div class="sub hover cap" style="opacity:0"> Designed by 牛肉佬Chenli</div></a></div>
+
+<nav class="menu dis-select"><a class="nav-item active" href="/">首页</a><a class="nav-item" href="/wiki/">专栏</a><a class="nav-item" href="/friends/">友链</a><a class="nav-item" href="/about/">空间</a></nav>
+</header>
+
+
+<div class="widgets">
+<widget class="widget-wrapper recent"><div class="widget-header cap theme dis-select"><span class="name">最近更新</span></div><div class="widget-body related-posts fs14"><a class="item title" href="/2023/12/30/2023%E6%89%8B%E6%9C%BA%E6%8A%A5%E5%91%8A/"><span class="title">我的2023手机APP报告</span></a><a class="item title" href="/2024/01/06/%E8%90%A5%E8%BF%90/"><span class="title">营运</span></a><a class="item title" href="/2024/01/04/%E6%8A%95%E8%B5%84%E8%90%A5%E8%BF%90/"><span class="title">投资营运篇</span></a><a class="item title" href="/2023/08/16/%E8%B4%A2%E5%8A%A1%E7%AE%A1%E7%90%86%E5%85%AC%E5%BC%8F-%E8%B4%A2%E5%8A%A1%E5%88%86%E6%9E%90%E7%AF%87/"><span class="title">财务管理公式-财务分析篇</span></a><a class="item title" href="/2023/08/16/%E8%B4%A2%E5%8A%A1%E7%AE%A1%E7%90%86%E5%85%AC%E5%BC%8F-%E6%8A%95%E8%B5%84%E7%AE%A1%E7%90%86%E7%AF%87/"><span class="title">财务管理公式-投资管理篇</span></a></div></widget>
+
+
+<widget class="widget-wrapper toc single" id="data-toc"><div class="widget-header cap dis-select"><span class="name">ESP8266制作温湿度计</span></div><div class="widget-body fs14"><div class="doc-tree active"><ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#%E6%91%98%E8%A6%81"><span class="toc-text">摘要</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E6%89%80%E9%9C%80%E6%9D%90%E6%96%99"><span class="toc-text">所需材料</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E6%95%99%E7%A8%8B"><span class="toc-text">教程</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E4%B8%80%E3%80%81%E5%AE%89%E8%A3%85Arduino-IDE-%E5%AE%98%E7%BD%91%E9%93%BE%E6%8E%A5"><span class="toc-text">一、安装Arduino IDE 官网链接:</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E4%B8%89%E3%80%81%E6%8E%A5%E7%BA%BF"><span class="toc-text">三、接线</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%9B%9B%E3%80%81%E9%85%8D%E7%BD%AEapp"><span class="toc-text">四、配置app</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E4%BA%94%E3%80%81%E5%88%B7%E5%85%A5%E7%A8%8B%E5%BA%8F"><span class="toc-text">五、刷入程序</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E5%86%99%E5%9C%A8%E6%9C%80%E5%90%8E"><span class="toc-text">写在最后</span></a></li></ol></div></div></widget>
+
+
+</div>
+<footer class="footer dis-select"><div class="social-wrap"><a class="social" href="https://github.com/Chenli-L" target="_blank" rel="external nofollow noopener noreferrer"><img class="lazy" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAABGdBTUEAALGPC/xhBQAAADhlWElmTU0AKgAAAAgAAYdpAAQAAAABAAAAGgAAAAAAAqACAAQAAAABAAAAAaADAAQAAAABAAAAAQAAAADa6r/EAAAAC0lEQVQIHWNgAAIAAAUAAY27m/MAAAAASUVORK5CYII=" data-src="https://gcore.jsdelivr.net/gh/cdn-x/placeholder@1.0.4/social/08a41b181ce68.svg"/></a><a class="social" href="https://y.qq.com/n/ryqq/singer/001fNHEf1SFEFN" target="_blank" rel="external nofollow noopener noreferrer"><img class="lazy" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAABGdBTUEAALGPC/xhBQAAADhlWElmTU0AKgAAAAgAAYdpAAQAAAABAAAAGgAAAAAAAqACAAQAAAABAAAAAaADAAQAAAABAAAAAQAAAADa6r/EAAAAC0lEQVQIHWNgAAIAAAUAAY27m/MAAAAASUVORK5CYII=" data-src="https://gcore.jsdelivr.net/gh/cdn-x/placeholder@1.0.4/social/3845874.svg"/></a><a class="social" href="/wiki/photo/" rel="noopener noreferrer"><img class="lazy" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAABGdBTUEAALGPC/xhBQAAADhlWElmTU0AKgAAAAgAAYdpAAQAAAABAAAAGgAAAAAAAqACAAQAAAABAAAAAaADAAQAAAABAAAAAQAAAADa6r/EAAAAC0lEQVQIHWNgAAIAAAUAAY27m/MAAAAASUVORK5CYII=" data-src="https://gcore.jsdelivr.net/gh/cdn-x/placeholder@1.0.4/social/3616429.svg"/></a><a class="social" href="/likes/" rel="noopener noreferrer"><img class="lazy" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAABGdBTUEAALGPC/xhBQAAADhlWElmTU0AKgAAAAgAAYdpAAQAAAABAAAAGgAAAAAAAqACAAQAAAABAAAAAaADAAQAAAABAAAAAQAAAADa6r/EAAAAC0lEQVQIHWNgAAIAAAUAAY27m/MAAAAASUVORK5CYII=" data-src="https://gcore.jsdelivr.net/gh/cdn-x/placeholder@1.0.4/social/942ebbf1a4b91.svg"/></a></div></footer>
+
+    </aside>
+    <div class='l_main'>
+      
+
+      
+
+
+
+<div class="bread-nav fs12"><div class="left"><div id="breadcrumb"><a class="cap breadcrumb" href="/">主页</a><span class="sep"></span><a class="cap breadcrumb" href="/">首页</a><span class="sep"></span><a class="cap breadcrumb-link" href="/categories/%E6%95%99%E7%A8%8B/">教程</a></div><div id="post-meta">
+    <span>发布于&nbsp;<time datetime="2023-09-02T19:21:39.000Z">2023-09-03</time></span>
+    
+    <span>更新于&nbsp;<time datetime="2023-12-25T04:32:12.436Z">2023-12-25</time></span>
+    </div></div></div>
+
+<article class='md-text content post'>
+<h1 class="article-title"><span>ESP8266制作温湿度计</span></h1>
+<h1 id="摘要"><a href="#摘要" class="headerlink" title="摘要"></a>摘要</h1><p>使用esp8266制作一个带显示屏显示+手机APP远程查看信息的温湿度计。</p>
+<h1 id="所需材料"><a href="#所需材料" class="headerlink" title="所需材料"></a>所需材料</h1><p>[1] esp8266 ——相当于一个带wifi的微型电脑<br>[2] dht 22 ——精度比dht11高的传感器，但是价格相对高点，也可以用dht11替代<br>[3] micro usb数据线<br>[4] 0.96寸 oled ——我这个oled是iic接口的，4个引脚就是iic接口<br>[5] 杜邦线若干<br>[6] 点灯科技app——十分感谢点灯科技为爱好者们免费提供服务器使用~~<br>[7] 使用Arduino进行编程</p>
+<h1 id="教程"><a href="#教程" class="headerlink" title="教程"></a>教程</h1><p>下载我打包的库文件以及程序<br>链接： <a target="_blank" rel="noopener" href="https://www.lanzous.com/ib4o8qd">https://www.lanzous.com/ib4o8qd</a></p>
+<h2 id="一、安装Arduino-IDE-官网链接"><a href="#一、安装Arduino-IDE-官网链接" class="headerlink" title="一、安装Arduino IDE 官网链接:"></a>一、安装Arduino IDE 官网链接:</h2><p><a target="_blank" rel="noopener" href="https://www.arduino.cc/en/Main/Software">https://www.arduino.cc/en/Main/Software</a><br>二、安装库文件<br>首先打开Arduino，</p>
+<div class="tag-plugin image"><div class="image-bg" style="background:white;padding:16px;"><img class="lazy" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAABGdBTUEAALGPC/xhBQAAADhlWElmTU0AKgAAAAgAAYdpAAQAAAABAAAAGgAAAAAAAqACAAQAAAABAAAAAaADAAQAAAABAAAAAQAAAADa6r/EAAAAC0lEQVQIHWNgAAIAAAUAAY27m/MAAAAASUVORK5CYII=" data-src="https://bu.dusays.com/2023/09/02/64f3568913ba6.jpg" fancybox="true" style="width:200px;"></div></div>
+<p>安装OLED库</p>
+<div class="tag-plugin image"><div class="image-bg" style="background:white;padding:16px;"><img class="lazy" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAABGdBTUEAALGPC/xhBQAAADhlWElmTU0AKgAAAAgAAYdpAAQAAAABAAAAGgAAAAAAAqACAAQAAAABAAAAAaADAAQAAAABAAAAAQAAAADa6r/EAAAAC0lEQVQIHWNgAAIAAAUAAY27m/MAAAAASUVORK5CYII=" data-src="https://bu.dusays.com/2023/09/02/64f356c30c9a9.jpg" fancybox="true" style="width:200px;"></div></div>
+<div class="tag-plugin image"><div class="image-bg" style="background:white;padding:16px;"><img class="lazy" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAABGdBTUEAALGPC/xhBQAAADhlWElmTU0AKgAAAAgAAYdpAAQAAAABAAAAGgAAAAAAAqACAAQAAAABAAAAAaADAAQAAAABAAAAAQAAAADa6r/EAAAAC0lEQVQIHWNgAAIAAAUAAY27m/MAAAAASUVORK5CYII=" data-src="https://bu.dusays.com/2023/09/02/64f356e9e4c43.jpg" fancybox="true" style="width:200px;"></div></div>
+<p>安装DHT传感器库</p>
+<div class="tag-plugin image"><div class="image-bg" style="background:white;padding:16px;"><img class="lazy" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAABGdBTUEAALGPC/xhBQAAADhlWElmTU0AKgAAAAgAAYdpAAQAAAABAAAAGgAAAAAAAqACAAQAAAABAAAAAaADAAQAAAABAAAAAQAAAADa6r/EAAAAC0lEQVQIHWNgAAIAAAUAAY27m/MAAAAASUVORK5CYII=" data-src="https://bu.dusays.com/2023/09/02/64f3572b02ec3.jpg" fancybox="true" style="width:200px;"></div></div>
+<p>安装blinker Arduino库</p>
+<div class="tag-plugin image"><div class="image-bg" style="background:white;padding:16px;"><img class="lazy" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAABGdBTUEAALGPC/xhBQAAADhlWElmTU0AKgAAAAgAAYdpAAQAAAABAAAAGgAAAAAAAqACAAQAAAABAAAAAaADAAQAAAABAAAAAQAAAADa6r/EAAAAC0lEQVQIHWNgAAIAAAUAAY27m/MAAAAASUVORK5CYII=" data-src="https://bu.dusays.com/2023/09/02/64f3576eb918c.jpg" fancybox="true" style="width:200px;"></div></div>
+<p>将blinker库解压到 我的电脑&gt;文档&gt;Arduino&gt;libraries 文件夹中，然后重启Arduino，库就安装好了。</p>
+<h2 id="三、接线"><a href="#三、接线" class="headerlink" title="三、接线"></a>三、接线</h2><div class="tag-plugin image"><div class="image-bg" style="background:white;padding:16px;"><img class="lazy" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAABGdBTUEAALGPC/xhBQAAADhlWElmTU0AKgAAAAgAAYdpAAQAAAABAAAAGgAAAAAAAqACAAQAAAABAAAAAaADAAQAAAABAAAAAQAAAADa6r/EAAAAC0lEQVQIHWNgAAIAAAUAAY27m/MAAAAASUVORK5CYII=" data-src="https://bu.dusays.com/2023/09/02/64f357aad0323.jpg" fancybox="true" style="width:200px;"></div></div>
+<h2 id="四、配置app"><a href="#四、配置app" class="headerlink" title="四、配置app"></a>四、配置app</h2><p>安卓的进点灯科技的官网下载app。 官网： <a target="_blank" rel="noopener" href="https://www.diandeng.tech/doc/app-download">https://www.diandeng.tech/doc/app-download</a><br>苹果的到apple store下载app，搜索”点灯科技“。<br>接下来以苹果app示例。</p>
+<p>打开点灯app，注册账号，然后点击右上角的+号，点击第一个，arduino，点击wifi接入，之后你会获得一个key，复制着保存，后面编程用得到。</p>
+<p>添加完成后，点进去我们新建的设备，然后点右上角的···，界面配置，把界面配置.txt里面的东西全复制到里面，点击更新配置。</p>
+<p>退出app后重新进入，点击设备，你会发现界面变成底部那张图，app的配置过程就结束了。[嘿哈]</p>
+<h2 id="五、刷入程序"><a href="#五、刷入程序" class="headerlink" title="五、刷入程序"></a>五、刷入程序</h2><p>将8266通过数据线接入电脑。<br>进入8266_dht_oled文件夹，双击ino后缀的文件，会自动打开Arduino。<br>接下来你需要更改的是刚刚在app获取的key，wifi名字，wifi密码</p>
+<p>然后点击顶部工具——开发板——改成NdeMCU 1.0<br>然后点击顶部工具——端口——改成你目前8266的端口<br>确保上面流程正确后，点击上传，等待程序提示上传成功。<br>六、测试<br>刷写完成后，oled亮起来并显示数据了，就说明你成功了</p>
+<h1 id="写在最后"><a href="#写在最后" class="headerlink" title="写在最后"></a>写在最后</h1><p>[1] oled的刷新是一分钟一次，如果有需要把延迟更短，可以把程序最后一句话改成 Blinker.delay(2000) ；<br>意思就是2秒刷新一次（由于dht22的限制，最快2秒读取一次数据）。<br>[2] 如果是dht11的模块，可以把dht22的代码用双斜杠&#x2F;&#x2F;注释掉，把dht11的双斜杠删掉。</p>
+
+
+
+<div class="article-footer reveal fs14">
+    <section id="license">
+      <div class="header"><span>许可协议</span></div>
+      <div class="body"><p>本文采用 <a target="_blank" rel="noopener" href="https://creativecommons.org/licenses/by-nc-sa/4.0/">署名-非商业性使用-相同方式共享 4.0 国际</a> 许可协议，由@Chenli编写，转载请注明出处。</p>
+</div>
+    </section>
+    
+    <section id="share">
+      <div class="header"><span>分享文章</span></div>
+      <div class="body">
+        <div class="link"><input class="copy-area" readonly="true" id="copy-link" value="http://chenliss.cn/2023/09/03/ESP8266%E5%88%B6%E4%BD%9C%E6%B8%A9%E6%B9%BF%E5%BA%A6%E8%AE%A1/" /></div>
+        <div class="social-wrap dis-select"><a class="social share-item wechat" onclick="util.toggle(&quot;qrcode-wechat&quot)"><img class="lazy" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAABGdBTUEAALGPC/xhBQAAADhlWElmTU0AKgAAAAgAAYdpAAQAAAABAAAAGgAAAAAAAqACAAQAAAABAAAAAaADAAQAAAABAAAAAQAAAADa6r/EAAAAC0lEQVQIHWNgAAIAAAUAAY27m/MAAAAASUVORK5CYII=" data-src="https://gcore.jsdelivr.net/gh/cdn-x/placeholder@1.0.9/social/b32ef3da1162a.svg"/></a><a class="social share-item weibo" target="_blank" rel="external nofollow noopener noreferrer" href="https://service.weibo.com/share/share.php?url=http://chenliss.cn/2023/09/03/ESP8266%E5%88%B6%E4%BD%9C%E6%B8%A9%E6%B9%BF%E5%BA%A6%E8%AE%A1/&title=ESP8266制作温湿度计 - 二月初二&pics=https://bu.dusays.com/2023/09/02/64f3552ea3b60.jpg&summary=摘要使用esp8266制作一个带显示屏显示+手机APP远程查看信息的温湿度计。
+所需材料[1] esp8266 ——相当于一个带wifi的微型电脑[2] dht 22 ——精度比dht11高的传感器，但是价格相对高点，也可以用dht1..."><img class="lazy" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAABGdBTUEAALGPC/xhBQAAADhlWElmTU0AKgAAAAgAAYdpAAQAAAABAAAAGgAAAAAAAqACAAQAAAABAAAAAaADAAQAAAABAAAAAQAAAADa6r/EAAAAC0lEQVQIHWNgAAIAAAUAAY27m/MAAAAASUVORK5CYII=" data-src="https://gcore.jsdelivr.net/gh/cdn-x/placeholder@1.0.9/social/80c07e4dbb303.svg"/></a><a class="social share-item email" href="mailto:?subject=ESP8266制作温湿度计 - 二月初二&amp;body=http://chenliss.cn/2023/09/03/ESP8266%E5%88%B6%E4%BD%9C%E6%B8%A9%E6%B9%BF%E5%BA%A6%E8%AE%A1/"><img class="lazy" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAABGdBTUEAALGPC/xhBQAAADhlWElmTU0AKgAAAAgAAYdpAAQAAAABAAAAGgAAAAAAAqACAAQAAAABAAAAAaADAAQAAAABAAAAAQAAAADa6r/EAAAAC0lEQVQIHWNgAAIAAAUAAY27m/MAAAAASUVORK5CYII=" data-src="https://gcore.jsdelivr.net/gh/cdn-x/placeholder@1.0.9/social/a1b00e20f425d.svg"/></a><a class="social share-item link" onclick="util.copy(&quot;copy-link&quot;, &quot;复制成功&quot;)"><img class="lazy" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAABGdBTUEAALGPC/xhBQAAADhlWElmTU0AKgAAAAgAAYdpAAQAAAABAAAAGgAAAAAAAqACAAQAAAABAAAAAaADAAQAAAABAAAAAQAAAADa6r/EAAAAC0lEQVQIHWNgAAIAAAUAAY27m/MAAAAASUVORK5CYII=" data-src="https://gcore.jsdelivr.net/gh/cdn-x/placeholder@1.0.9/social/8411ed322ced6.svg"/></a></div>
+        
+        <div class="qrcode" id="qrcode-wechat" style="visibility:hidden;height:0">
+          <img class="lazy" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAABGdBTUEAALGPC/xhBQAAADhlWElmTU0AKgAAAAgAAYdpAAQAAAABAAAAGgAAAAAAAqACAAQAAAABAAAAAaADAAQAAAABAAAAAQAAAADa6r/EAAAAC0lEQVQIHWNgAAIAAAUAAY27m/MAAAAASUVORK5CYII=" data-src="https://api.qrserver.com/v1/create-qr-code/?size=256x256&data=http://chenliss.cn/2023/09/03/ESP8266%E5%88%B6%E4%BD%9C%E6%B8%A9%E6%B9%BF%E5%BA%A6%E8%AE%A1/"/>
+        </div>
+        
+      </div>
+    </section>
+    </div>
+
+</article>
+
+<div class="related-wrap reveal" id="read-next"><section class="body"><div class="item" id="prev"><div class="note">较新文章</div><a href="/2023/09/08/%E6%BC%AB%E9%95%BF%E7%9A%84%E5%AD%A3%E8%8A%82%E8%AE%B0%E5%BD%95/">漫长的季节观后感</a></div><div class="item" id="next"><div class="note">较早文章</div><a href="/2023/09/02/MIUI12%E6%8E%A7%E5%88%B6%E9%9D%A2%E6%9D%BF%E5%8F%8A%E9%80%9A%E7%9F%A5%E4%B8%AD%E5%BF%83%E4%B8%BB%E9%A2%98%E4%BF%AE%E6%94%B9%E4%BB%A3%E7%A0%81/">MIUI12控制面板及通知中心主题修改代码</a></div></section></div>
+
+
+
+
+
+
+
+
+      
+<footer class="page-footer reveal fs12"><hr><div class="text"><p>本站由 <a href="/">@Chenli</a> 使用 <a target="_blank" rel="noopener" href="https://github.com/xaoxuu/hexo-theme-stellar">hexo-Stellar</a> 主题创建。<br>粤ICP备<a target="_blank" rel="noopener" href="http://beian.miit.gov.cn/">2023105130</a>号。萌ICP备<a target="_blank" rel="noopener" href="https://icp.gov.moe/?keyword=20232122">20232122</a>号。<br>本博客所有文章除特别声明外，均采用 <a target="_blank" rel="noopener" href="https://creativecommons.org/licenses/by-nc-sa/4.0/">CC BY-NC-SA 4.0</a> 许可协议，转载请注明出处。</p>
+<script type="text/javascript">
+function show_runtime() {
+    window.setTimeout("show_runtime()", 1000);
+    X = new Date("8/3/2023 00:00:00");
+    Y = new Date();
+    T = (Y.getTime() - X.getTime());
+    M = 24 * 60 * 60 * 1000;
+    a = T / M;
+    A = Math.floor(a);
+    b = (a - A) * 24;
+    B = Math.floor(b);
+    c = (b - B) * 60;
+    C = Math.floor((b - B) * 60);
+    D = Math.floor((c - C) * 60);
+    runtime_span.innerHTML = "⏱本站已艰难运行 " + A + "天" + B + "小时" + C + "分" + D + "秒"
+}
+show_runtime();
+</script>
+<p><span id="runtime_span"></span><br><a href="https://www.foreverblog.cn/go.html" target="_blank"> <img class="lazy" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAABGdBTUEAALGPC/xhBQAAADhlWElmTU0AKgAAAAgAAYdpAAQAAAABAAAAGgAAAAAAAqACAAQAAAABAAAAAaADAAQAAAABAAAAAQAAAADa6r/EAAAAC0lEQVQIHWNgAAIAAAUAAY27m/MAAAAASUVORK5CYII=" data-src="https://img.foreverblog.cn/wormhole_2.gif" alt="" style="width:auto;height:32px;" title="穿梭虫洞-随机访问十年之约友链博客"></a></p>
+</div></footer>
+
+      <div class='float-panel mobile-only blur' style='display:none'>
+  <button type='button' class='sidebar-toggle mobile' onclick='sidebar.toggle()'>
+    <svg class="icon" style="width: 1em; height: 1em;vertical-align: middle;fill: currentColor;overflow: hidden;" viewBox="0 0 1024 1024" version="1.1" xmlns="http://www.w3.org/2000/svg" p-id="15301"><path d="M566.407 808.3c26.9-0.1 49.3-20.8 51.6-47.6-1.9-27.7-23.9-49.7-51.6-51.6h-412.6c-28.2-1.4-52.6 19.5-55.5 47.6 2.3 26.8 24.6 47.5 51.6 47.6h416.5v4z m309.3-249.9c26.9-0.1 49.3-20.8 51.6-47.6-2.2-26.8-24.6-47.5-51.6-47.6h-721.9c-27.7-2.8-52.5 17.4-55.3 45.1-0.1 0.8-0.1 1.7-0.2 2.5 0.9 27.2 23.6 48.5 50.7 47.6H875.707z m-103.1-245.9c26.9-0.1 49.3-20.8 51.6-47.6-0.4-28.3-23.2-51.1-51.5-51.6h-618.9c-29.5-1.1-54.3 21.9-55.5 51.4v0.2c1.4 27.8 25.2 49.2 53 47.8 0.8 0 1.7-0.1 2.5-0.2h618.8z" p-id="15302"></path><path d="M566.407 808.3c26.9-0.1 49.3-20.8 51.6-47.6-1.9-27.7-23.9-49.7-51.6-51.6h-412.6c-28.2-1.4-52.6 19.5-55.5 47.6 1.9 27.7 23.9 49.7 51.6 51.6h416.5z m309.3-249.9c26.9-0.1 49.3-20.8 51.6-47.6-2.2-26.8-24.6-47.5-51.6-47.6h-721.9c-27.7-2.8-52.5 17.4-55.3 45.1-0.1 0.8-0.1 1.7-0.2 2.5 0.9 27.2 23.6 48.5 50.7 47.6H875.707z m-103.1-245.9c26.9-0.1 49.3-20.8 51.6-47.6-0.4-28.3-23.2-51.1-51.5-51.6h-618.9c-29.5-1.1-54.3 21.9-55.5 51.4v0.2c1.4 27.8 25.2 49.2 53 47.8 0.8 0 1.7-0.1 2.5-0.2h618.8z" p-id="15303"></path></svg>
+  </button>
+</div>
+
+    </div>
+  </div>
+  <div class='scripts'>
+    <script type="text/javascript">
+  const stellar = {
+    // 懒加载 css https://github.com/filamentgroup/loadCSS
+    loadCSS: (href, before, media, attributes) => {
+      var doc = window.document;
+      var ss = doc.createElement("link");
+      var ref;
+      if (before) {
+        ref = before;
+      } else {
+        var refs = (doc.body || doc.getElementsByTagName("head")[0]).childNodes;
+        ref = refs[refs.length - 1];
+      }
+      var sheets = doc.styleSheets;
+      if (attributes) {
+        for (var attributeName in attributes) {
+          if (attributes.hasOwnProperty(attributeName)) {
+            ss.setAttribute(attributeName, attributes[attributeName]);
+          }
+        }
+      }
+      ss.rel = "stylesheet";
+      ss.href = href;
+      ss.media = "only x";
+      function ready(cb) {
+        if (doc.body) {
+          return cb();
+        }
+        setTimeout(function () {
+          ready(cb);
+        });
+      }
+      ready(function () {
+        ref.parentNode.insertBefore(ss, before ? ref : ref.nextSibling);
+      });
+      var onloadcssdefined = function (cb) {
+        var resolvedHref = ss.href;
+        var i = sheets.length;
+        while (i--) {
+          if (sheets[i].href === resolvedHref) {
+            return cb();
+          }
+        }
+        setTimeout(function () {
+          onloadcssdefined(cb);
+        });
+      };
+      function loadCB() {
+        if (ss.addEventListener) {
+          ss.removeEventListener("load", loadCB);
+        }
+        ss.media = media || "all";
+      }
+      if (ss.addEventListener) {
+        ss.addEventListener("load", loadCB);
+      }
+      ss.onloadcssdefined = onloadcssdefined;
+      onloadcssdefined(loadCB);
+      return ss;
+    },
+
+    // 从 butterfly 和 volantis 获得灵感
+    loadScript: (src, opt) => new Promise((resolve, reject) => {
+      var script = document.createElement('script');
+      if (src.startsWith('/')){
+        src = stellar.config.root + src.substring(1);
+      }
+      script.src = src;
+      if (opt) {
+        for (let key of Object.keys(opt)) {
+          script[key] = opt[key]
+        }
+      } else {
+        // 默认异步，如果需要同步，第二个参数传入 {} 即可
+        script.async = true
+      }
+      script.onerror = reject
+      script.onload = script.onreadystatechange = function() {
+        const loadState = this.readyState
+        if (loadState && loadState !== 'loaded' && loadState !== 'complete') return
+        script.onload = script.onreadystatechange = null
+        resolve()
+      }
+      document.head.appendChild(script)
+    }),
+
+    // https://github.com/jerryc127/hexo-theme-butterfly
+    jQuery: (fn) => {
+      if (typeof jQuery === 'undefined') {
+        stellar.loadScript(stellar.plugins.jQuery).then(fn)
+      } else {
+        fn()
+      }
+    }
+  };
+  stellar.version = '1.21.0';
+  stellar.github = 'https://github.com/xaoxuu/hexo-theme-stellar/tree/1.21.0';
+  stellar.config = {
+    date_suffix: {
+      just: '刚刚',
+      min: '分钟前',
+      hour: '小时前',
+      day: '天前',
+      month: '个月前',
+    },
+    root : '/',
+  };
+
+  // required plugins (only load if needs)
+  stellar.plugins = {
+    jQuery: 'https://gcore.jsdelivr.net/npm/jquery@3.6.2/dist/jquery.min.js'
+  };
+
+  if ('local_search') {
+    stellar.search = {};
+    stellar.search.service = 'local_search';
+    if (stellar.search.service == 'local_search') {
+      let service_obj = Object.assign({}, {"field":"all","path":"/search.json","content":true,"sort":"-date"});
+      stellar.search[stellar.search.service] = service_obj;
+    }
+  }
+
+  // stellar js
+  stellar.plugins.stellar = Object.assign({"sites":"/js/plugins/sites.js","friends":"/js/plugins/friends.js","ghinfo":"/js/plugins/ghinfo.js","timeline":"/js/plugins/timeline.js","linkcard":"/js/plugins/linkcard.js","fcircle":"/js/plugins/fcircle.js","weibo":"/js/plugins/weibo.js"});
+
+  stellar.plugins.marked = Object.assign("https://cdn.bootcdn.net/ajax/libs/marked/4.0.18/marked.min.js");
+  // optional plugins
+  if ('true' == 'true') {
+    stellar.plugins.lazyload = Object.assign({"enable":true,"js":"https://gcore.jsdelivr.net/npm/vanilla-lazyload@17.8.3/dist/lazyload.min.js","transition":"blur"});
+  }
+  if ('true' == 'true') {
+    stellar.plugins.swiper = Object.assign({"enable":true,"css":"https://unpkg.com/swiper@8.4.5/swiper-bundle.min.css","js":"https://unpkg.com/swiper@8.4.5/swiper-bundle.min.js"});
+  }
+  if ('' == 'true') {
+    stellar.plugins.scrollreveal = Object.assign({"enable":null,"js":"https://gcore.jsdelivr.net/npm/scrollreveal@4.0.9/dist/scrollreveal.min.js","distance":"8px","duration":500,"interval":100,"scale":1});
+  }
+  if ('true' == 'true') {
+    stellar.plugins.preload = Object.assign({"enable":true,"service":"flying_pages","instant_page":"https://gcore.jsdelivr.net/gh/volantis-x/cdn-volantis@4.1.2/js/instant_page.js","flying_pages":"https://gcore.jsdelivr.net/gh/gijo-varghese/flying-pages@2.1.2/flying-pages.min.js"});
+  }
+  if ('true' == 'true') {
+    stellar.plugins.fancybox = Object.assign({"enable":true,"js":"https://gcore.jsdelivr.net/npm/@fancyapps/ui@4.0/dist/fancybox.umd.js","css":"https://gcore.jsdelivr.net/npm/@fancyapps/ui@4.0/dist/fancybox.css","selector":".swiper-slide img"});
+  }
+  if ('false' == 'true') {
+    stellar.plugins.heti = Object.assign({"enable":false,"css":"https://unpkg.com/heti@0.9.2/umd/heti.min.css","js":"https://unpkg.com/heti@0.9.2/umd/heti-addon.min.js"});
+  }
+  if ('true' == 'true') {
+    stellar.plugins.copycode = Object.assign({"enable":true,"js":"/js/plugins/copycode.js","default_text":"Copy","success_text":"Copied"});
+  }
+</script>
+
+<!-- required -->
+
+  
+<script src="/js/main.js" async></script>
+
+
+
+<!-- optional -->
+
+
+
+<!-- inject -->
+
+
+  </div>
+</body>
+</html>
